@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 class_name UnitTest
 
-var speed: float = 100
+var speed: float = 500
 var direction_move: Vector2 = Vector2.ZERO
 
 

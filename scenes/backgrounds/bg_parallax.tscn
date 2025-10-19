@@ -72,14 +72,20 @@ motion_scale = Vector2(0.875, 0.875)
 motion_mirroring = Vector2(1536, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer6"]
+texture_repeat = 2
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("7_v3dy7")
 centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 2400, 1080)
 
 [node name="ParallaxLayer7" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_mirroring = Vector2(1536, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer7"]
+texture_repeat = 2
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("8_0sm4h")
 centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 2400, 1080)
