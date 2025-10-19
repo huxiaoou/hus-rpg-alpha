@@ -2,8 +2,14 @@ extends CharacterBody2D
 
 class_name UnitTest
 
+@export var start_grid: Vector2i
+
 var speed: float = 500
 var direction_move: Vector2 = Vector2.ZERO
+
+
+func _ready() -> void:
+	global_position = ManagerGrid.get_world_pos(start_grid)
 
 
 func _process(_delta: float) -> void:
