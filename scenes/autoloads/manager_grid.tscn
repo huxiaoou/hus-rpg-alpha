@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bxtgmbako83ob"]
+
+[ext_resource type="Script" uid="uid://csqkomvyv5h1a" path="res://scenes/autoloads/manager_grid.gd" id="1_xia4i"]
+
+[node name="ManagerGrid" type="Node"]
+script = ExtResource("1_xia4i")
