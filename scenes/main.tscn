@@ -1,12 +1,14 @@
-[gd_scene load_steps=6 format=4 uid="uid://f6kb1oflhx8f"]
+[gd_scene load_steps=7 format=4 uid="uid://f6kb1oflhx8f"]
 
 [ext_resource type="PackedScene" uid="uid://0i7jxci2k0eo" path="res://scenes/backgrounds/bg_parallax.tscn" id="1_0wfyh"]
+[ext_resource type="Script" uid="uid://e8aoy3wscbse" path="res://scenes/main.gd" id="1_tefeu"]
 [ext_resource type="PackedScene" uid="uid://bqwob2kmuchxg" path="res://scenes/units/unit_test.tscn" id="2_sugp2"]
 [ext_resource type="PackedScene" uid="uid://c6wvjqve4ff4p" path="res://scenes/grids/layer_nav.tscn" id="2_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://c4xm3vanuejk4" path="res://scenes/camera/camera_control.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://cabrqse2bpq4w" path="res://scenes/ui/grid_indicator.tscn" id="6_o6xl0"]
 
 [node name="main" type="Node"]
+script = ExtResource("1_tefeu")
 
 [node name="BGParallax" parent="." instance=ExtResource("1_0wfyh")]
 

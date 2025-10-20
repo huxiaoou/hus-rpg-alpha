@@ -24,3 +24,9 @@ func _process(delta: float) -> void:
 	target_position.y = clamp(target_position.y, lim_left_top.y, lim_right_down.y)
 	global_position = target_position
 	return
+
+
+func on_unit_double_clicked(unit: UnitTest) -> void:
+	global_position.x = clamp(unit.global_position.x, lim_left_top.x, lim_right_down.x)
+	global_position.y = clamp(unit.global_position.y, lim_left_top.y, lim_right_down.y)
+	return

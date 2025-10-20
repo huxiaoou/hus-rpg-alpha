@@ -7,6 +7,7 @@
 size = Vector2(118, 120)
 
 [node name="UnitTest" type="CharacterBody2D"]
+input_pickable = true
 script = ExtResource("1_ip78a")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -14,3 +15,5 @@ texture = ExtResource("1_ohhv2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ohhv2")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

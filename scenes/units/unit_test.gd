@@ -3,6 +3,7 @@ extends CharacterBody2D
 class_name UnitTest
 
 @export var start_grid: Vector2i
+signal unit_double_clicked(unit: UnitTest)
 
 var speed: float = 500
 var target_world_pos: Vector2
@@ -10,6 +11,7 @@ var grid_pos: Vector2i:
 	get:
 		return ManagerGrid.get_grid_pos(global_position)
 var path: Array[Vector2]
+var last_click_time: int = 0
 
 
 func _ready() -> void:
@@ -31,5 +33,14 @@ func _unhandled_input(event: InputEvent) -> void:
 		path = ManagerGrid.get_nav_world_path(self.grid_pos, mouse_grid_pos)
 
 
-func move(target_world_pos: Vector2, delta: float) -> void:
-	global_position = global_position.move_toward(target_world_pos, speed * delta)
+func move(_target_world_pos: Vector2, delta: float) -> void:
+	global_position = global_position.move_toward(_target_world_pos, speed * delta)
+
+
+func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			var this_click_time: int = Time.get_ticks_msec()
+			if this_click_time - last_click_time < 500:
+				unit_double_clicked.emit(self)
+			last_click_time = this_click_time
