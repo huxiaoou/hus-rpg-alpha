@@ -27,3 +27,36 @@ func get_nav_world_path(start_grid_pos: Vector2i, end_grid_pos: Vector2i) -> Arr
 	for grid_pos in grid_path:
 		world_path.append(ManagerGrid.get_world_pos(grid_pos))
 	return world_path
+
+
+# --- manage grid
+func is_valid_grid(grid_pos: Vector2i) -> bool:
+	return layer_nav.datasets_grid.has(grid_pos)
+
+
+func is_grid_walkable(grid_pos: Vector2i) -> bool:
+	return is_valid_grid(grid_pos) and layer_nav.is_grid_walkable(grid_pos)
+
+
+func set_grid_walkablity(grid_pos: Vector2i, walkablity: bool) -> void:
+	if not is_valid_grid(grid_pos):
+		return
+	layer_nav.set_grid_walkablity(grid_pos, walkablity)
+	return
+
+
+func is_grid_occupied(grid_pos: Vector2i) -> bool:
+	return is_valid_grid(grid_pos) and layer_nav.is_grid_occupied(grid_pos)
+
+
+func get_grid_occupant(grid_pos: Vector2i) -> UnitTest:
+	if not is_valid_grid(grid_pos):
+		return null
+	return layer_nav.get_grid_occupant(grid_pos)
+
+
+func set_grid_occupant(grid_pos: Vector2i, unit: UnitTest) -> void:
+	if not is_valid_grid(grid_pos):
+		return
+	layer_nav.set_grid_occupant(grid_pos, unit)
+	return
