@@ -18,7 +18,7 @@ func get_mouse_grid_pos() -> Vector2i:
 
 
 func get_nav_grid_path(start_grid_pos: Vector2i, end_grid_pos: Vector2i) -> Array[Vector2i]:
-	return layer_nav.a_star.get_id_path(start_grid_pos, end_grid_pos)
+	return layer_nav.get_nav_grid_path(start_grid_pos, end_grid_pos)
 
 
 func get_nav_world_path(start_grid_pos: Vector2i, end_grid_pos: Vector2i) -> Array[Vector2]:
