@@ -3,6 +3,8 @@ extends CharacterBody2D
 class_name UnitTest
 
 @export var start_grid: Vector2i
+@export var double_click_threshold_milliseconds: int = 500
+
 signal unit_double_clicked(unit: UnitTest)
 
 var speed: float = 500
@@ -41,6 +43,6 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			var this_click_time: int = Time.get_ticks_msec()
-			if this_click_time - last_click_time < 500:
+			if this_click_time - last_click_time < double_click_threshold_milliseconds:
 				unit_double_clicked.emit(self)
 			last_click_time = this_click_time
