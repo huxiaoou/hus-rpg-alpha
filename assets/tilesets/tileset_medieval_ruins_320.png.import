@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d30n2jkcool5u"
-path="res://.godot/imported/tileset_pine_hill.png-9dfeea03447292c453304a99ed313aae.ctex"
+uid="uid://co47hn04s0ois"
+path="res://.godot/imported/tileset_medieval_ruins_320.png-e0a3b069b20d2ee8234831105261c27e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tilesets/tileset_pine_hill.png"
-dest_files=["res://.godot/imported/tileset_pine_hill.png-9dfeea03447292c453304a99ed313aae.ctex"]
+source_file="res://assets/tilesets/tileset_medieval_ruins_320.png"
+dest_files=["res://.godot/imported/tileset_medieval_ruins_320.png-e0a3b069b20d2ee8234831105261c27e.ctex"]
 
 [params]
 
