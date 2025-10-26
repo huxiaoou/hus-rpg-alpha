@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dalshoc7gi076"]
+
+[ext_resource type="Script" uid="uid://nfnrlt7kwbmv" path="res://scenes/abilities/director_abilities.gd" id="1_jlwn6"]
+
+[node name="DirectorAbilities" type="Node"]
+script = ExtResource("1_jlwn6")

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3mfc486t6t6u"]
+
+[ext_resource type="Script" uid="uid://c4y8rbjdb60fs" path="res://scenes/abilities/ability_move.gd" id="1_w8lu7"]
+
+[node name="AbilityMove" type="Node"]
+script = ExtResource("1_w8lu7")
+ability_id = "ability_move"
+ability_name = "Move"
+metadata/_custom_type_script = "uid://dl7biw0en2qpx"

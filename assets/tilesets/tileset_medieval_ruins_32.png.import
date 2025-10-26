@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://co47hn04s0ois"
-path="res://.godot/imported/tileset_medieval_ruins_320.png-e0a3b069b20d2ee8234831105261c27e.ctex"
+uid="uid://b1cl0spbftig6"
+path="res://.godot/imported/tileset_medieval_ruins_32.png-2116390a55bde3078398a1638a1bb068.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tilesets/tileset_medieval_ruins_320.png"
-dest_files=["res://.godot/imported/tileset_medieval_ruins_320.png-e0a3b069b20d2ee8234831105261c27e.ctex"]
+source_file="res://assets/tilesets/tileset_medieval_ruins_32.png"
+dest_files=["res://.godot/imported/tileset_medieval_ruins_32.png-2116390a55bde3078398a1638a1bb068.ctex"]
 
 [params]
 
