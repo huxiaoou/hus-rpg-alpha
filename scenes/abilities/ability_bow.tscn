@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2dlwxlof6euy"]
+
+[ext_resource type="Script" uid="uid://dymfi7xmrv5y5" path="res://scenes/abilities/ability_bow.gd" id="1_fw65g"]
+
+[node name="AbilityBow" type="Node"]
+script = ExtResource("1_fw65g")
+metadata/_custom_type_script = "uid://dl7biw0en2qpx"

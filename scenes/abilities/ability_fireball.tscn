@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqcrr0rs48fxi"]
+
+[ext_resource type="Script" uid="uid://ch0rhxl86lq50" path="res://scenes/abilities/ability_fireball.gd" id="1_tbcqm"]
+
+[node name="AbilityFireball" type="Node"]
+script = ExtResource("1_tbcqm")
+metadata/_custom_type_script = "uid://dl7biw0en2qpx"

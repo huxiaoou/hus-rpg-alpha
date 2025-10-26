@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cknsx21bcgolb"]
+
+[ext_resource type="Script" uid="uid://b10g8y22ob2q" path="res://scenes/abilities/ability_sword.gd" id="1_utmkf"]
+
+[node name="AbilitySword" type="Node"]
+script = ExtResource("1_utmkf")
+metadata/_custom_type_script = "uid://dl7biw0en2qpx"

@@ -20,13 +20,15 @@ func _ready() -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	if director_abilities.is_performing:
-		return
-
 	if event.is_action_pressed("left_mouse_click"):
+		if director_abilities.is_performing:
+			print("%s is performing" % director_abilities.performing_ability.ability_name)
+			return
 		var mouse_grid_pos: Vector2i = ManagerGrid.get_mouse_grid_pos()
-		director_abilities.is_performing = true
-		director_abilities.get_ability("ability_move").start(mouse_grid_pos, director_abilities.on_ability_finished)
+		var ability_move: AbilityBase = director_abilities.get_ability("ability_move")
+		if ability_move != null:
+			director_abilities.set_performing_ability(ability_move)
+			ability_move.start(mouse_grid_pos, director_abilities.on_ability_finished)
 
 
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
