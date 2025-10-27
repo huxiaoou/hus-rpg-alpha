@@ -2,7 +2,7 @@ extends AbilityBase
 
 class_name AbilityMove
 
-var speed: float = 500
+@export var speed: float = 200
 var path: Array[Vector2] = []
 
 
@@ -17,6 +17,10 @@ func _process(delta: float) -> void:
 	if path.is_empty():
 		finish()
 	else:
+		if path[0].x > unit.global_position.x:
+			unit.animated_sprite_2d.scale.x = 1
+		elif path[0].x < unit.global_position.x:
+			unit.animated_sprite_2d.scale.x = -1
 		move(path[0], delta)
 		if unit.global_position == path[0]:
 			path.remove_at(0)
@@ -24,5 +28,6 @@ func _process(delta: float) -> void:
 
 func start(targe_grid_pos: Vector2i, _on_ablility_finished: Callable) -> void:
 	super.start(targe_grid_pos, _on_ablility_finished)
+	unit.animated_sprite_2d.play("walk")
 	path = ManagerGrid.get_nav_world_path(unit.grid_pos, targe_grid_pos)
 	return

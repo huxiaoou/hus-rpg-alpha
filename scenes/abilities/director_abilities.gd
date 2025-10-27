@@ -23,4 +23,5 @@ func set_performing_ability(ability: AbilityBase) -> void:
 
 
 func on_ability_finished() -> void:
+	performing_ability.unit.animated_sprite_2d.play("idle")
 	is_performing = false

@@ -25,12 +25,12 @@ func _process(delta: float) -> void:
 	if camera_mov_direction != Vector2.ZERO:
 		tracking_unit = null
 		target_position = global_position + camera_mov_direction * camera_move_speed * delta
-		clamp_target_pos()
-		track_target()
-	elif tracking_unit != null:
+	else:
+		if tracking_unit == null:
+			return
 		target_position = global_position.move_toward(tracking_unit.global_position, camera_move_speed * delta)
-		clamp_target_pos()
-		track_target()
+	clamp_target_pos()
+	track_target()
 	return
 
 

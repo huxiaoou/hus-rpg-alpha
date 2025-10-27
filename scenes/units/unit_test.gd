@@ -5,6 +5,7 @@ class_name UnitTest
 @export var start_grid: Vector2i
 @export var double_click_threshold_milliseconds: int = 500
 @onready var director_abilities: DirectorAbilities = $DirectorAbilities
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 signal unit_double_clicked(unit: UnitTest)
 

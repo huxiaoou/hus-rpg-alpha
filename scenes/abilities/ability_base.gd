@@ -15,7 +15,7 @@ func _ready() -> void:
 	unit = self.owner
 
 
-func start(targe_grid_pos: Vector2i, _on_ablility_finished: Callable) -> void:
+func start(_targe_grid_pos: Vector2i, _on_ablility_finished: Callable) -> void:
 	is_active = true
 	on_ability_finished = _on_ablility_finished
 	print("Begin to cast ablility %s" % ability_name)
