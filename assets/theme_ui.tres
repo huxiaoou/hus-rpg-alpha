@@ -1,0 +1,26 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://cmc345t3y1agn"]
+
+[ext_resource type="FontFile" uid="uid://bulv0qbdfbjaf" path="res://assets/fonts/Font_Fantasy.ttf" id="1_tkx5x"]
+[ext_resource type="Texture2D" uid="uid://dl3tvasm5u6au" path="res://assets/ui/Folding & Cutout Paper UI SpriteSheet.png" id="2_fs3rm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dexye"]
+atlas = ExtResource("2_fs3rm")
+region = Rect2(63, 560, 385, 144)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j405j"]
+texture = SubResource("AtlasTexture_dexye")
+texture_margin_left = 65.0
+texture_margin_top = 39.0
+texture_margin_right = 68.0
+texture_margin_bottom = 42.0
+region_rect = Rect2(2, 1, 383, 143)
+
+[resource]
+Label/colors/font_color = Color(0.0470588, 0.0470588, 0.0470588, 0.784314)
+Label/colors/font_shadow_color = Color(0.233926, 0.233925, 0.233925, 0)
+Label/constants/line_spacing = -12
+Label/constants/outline_size = 1
+Label/constants/paragraph_spacing = 0
+Label/font_sizes/font_size = 18
+Label/fonts/font = ExtResource("1_tkx5x")
+Label/styles/normal = SubResource("StyleBoxTexture_j405j")
