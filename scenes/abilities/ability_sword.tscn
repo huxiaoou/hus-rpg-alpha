@@ -7,6 +7,9 @@
 
 [node name="AbilitySword" type="Node"]
 script = ExtResource("1_1bwa0")
+ability_id = "ability_sword"
+ability_name = "Sword"
+ability_description = "Basic attack for knights."
 texture_normal = ExtResource("2_sp64x")
 texture_hover = ExtResource("3_q5yjy")
 texture_press = ExtResource("4_4swi4")

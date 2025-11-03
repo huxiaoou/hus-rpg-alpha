@@ -25,7 +25,7 @@ func _on_mouse_exited() -> void:
 
 func set_up(ability: AbilityBase) -> void:
 	self.ability = ability
-	label_description.text = ability.ability_name
+	label_description.text = "%s\n%s" % [ability.ability_name, ability.ability_description]
 	texture_normal = ability.texture_normal
 	texture_hover = ability.texture_hover
 	texture_pressed = ability.texture_press

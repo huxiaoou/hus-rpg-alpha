@@ -7,6 +7,9 @@
 
 [node name="AbilityFireball" type="Node"]
 script = ExtResource("1_tbcqm")
+ability_id = "ability_fireball"
+ability_name = "Fireball"
+ability_description = "AOE attack for mages."
 texture_normal = ExtResource("2_4wrbd")
 texture_hover = ExtResource("3_t6xwv")
 texture_press = ExtResource("4_4bkdm")

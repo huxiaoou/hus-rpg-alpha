@@ -9,6 +9,7 @@
 script = ExtResource("1_w8lu7")
 ability_id = "ability_move"
 ability_name = "Move"
+ability_description = "Make unit move in the map."
 texture_normal = ExtResource("2_6u8dh")
 texture_hover = ExtResource("3_5rrik")
 texture_press = ExtResource("4_2dyxb")

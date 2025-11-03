@@ -7,6 +7,9 @@
 
 [node name="AbilityBow" type="Node"]
 script = ExtResource("1_fw65g")
+ability_id = "ability_bow"
+ability_name = "Bow"
+ability_description = "Basic attack for archers."
 texture_normal = ExtResource("2_7y6br")
 texture_hover = ExtResource("3_3g12s")
 texture_press = ExtResource("4_3msnn")

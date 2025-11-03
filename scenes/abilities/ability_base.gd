@@ -4,6 +4,7 @@ class_name AbilityBase
 
 @export var ability_id: String = ""
 @export var ability_name: String = ""
+@export var ability_description: String = ""
 @export var texture_normal: Texture2D
 @export var texture_hover: Texture2D
 @export var texture_press: Texture2D
