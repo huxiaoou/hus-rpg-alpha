@@ -2,6 +2,8 @@ extends TextureButton
 
 class_name ButtonAbility
 
+var ability: AbilityBase = null
+
 @export var description: String = "Give description for the ability here."
 @onready var label_description: Label = $LabelDescription
 
@@ -19,3 +21,11 @@ func _gui_input(event: InputEvent) -> void:
 
 func _on_mouse_exited() -> void:
 	label_description.visible = false
+
+
+func set_up(ability: AbilityBase) -> void:
+	self.ability = ability
+	label_description.text = ability.ability_name
+	texture_normal = ability.texture_normal
+	texture_hover = ability.texture_hover
+	texture_pressed = ability.texture_press

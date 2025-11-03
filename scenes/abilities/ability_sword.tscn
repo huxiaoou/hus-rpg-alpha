@@ -1,7 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://cknsx21bcgolb"]
+[gd_scene load_steps=5 format=3 uid="uid://cknsx21bcgolb"]
 
 [ext_resource type="Script" uid="uid://b10g8y22ob2q" path="res://scenes/abilities/ability_sword.gd" id="1_1bwa0"]
+[ext_resource type="Texture2D" uid="uid://c3hhg7gy3tqei" path="res://assets/ui/ability_sword_normal.png" id="2_sp64x"]
+[ext_resource type="Texture2D" uid="uid://cbm88rslm5fqe" path="res://assets/ui/ability_sword_hover.png" id="3_q5yjy"]
+[ext_resource type="Texture2D" uid="uid://dsyo0imwymshn" path="res://assets/ui/ability_sword_press.png" id="4_4swi4"]
 
 [node name="AbilitySword" type="Node"]
 script = ExtResource("1_1bwa0")
+texture_normal = ExtResource("2_sp64x")
+texture_hover = ExtResource("3_q5yjy")
+texture_press = ExtResource("4_4swi4")
 metadata/_custom_type_script = "uid://dl7biw0en2qpx"

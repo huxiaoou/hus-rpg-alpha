@@ -1,7 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://dqcrr0rs48fxi"]
+[gd_scene load_steps=5 format=3 uid="uid://dqcrr0rs48fxi"]
 
 [ext_resource type="Script" uid="uid://ch0rhxl86lq50" path="res://scenes/abilities/ability_fireball.gd" id="1_tbcqm"]
+[ext_resource type="Texture2D" uid="uid://d4m1grwu02b4i" path="res://assets/ui/ability_fireball_normal.png" id="2_4wrbd"]
+[ext_resource type="Texture2D" uid="uid://d3qnqqlkoa2b4" path="res://assets/ui/ability_fireball_hover.png" id="3_t6xwv"]
+[ext_resource type="Texture2D" uid="uid://bvfuriu735dly" path="res://assets/ui/ability_fireball_press.png" id="4_4bkdm"]
 
 [node name="AbilityFireball" type="Node"]
 script = ExtResource("1_tbcqm")
+texture_normal = ExtResource("2_4wrbd")
+texture_hover = ExtResource("3_t6xwv")
+texture_press = ExtResource("4_4bkdm")
 metadata/_custom_type_script = "uid://dl7biw0en2qpx"

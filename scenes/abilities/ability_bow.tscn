@@ -1,7 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://d2dlwxlof6euy"]
+[gd_scene load_steps=5 format=3 uid="uid://d2dlwxlof6euy"]
 
 [ext_resource type="Script" uid="uid://dymfi7xmrv5y5" path="res://scenes/abilities/ability_bow.gd" id="1_fw65g"]
+[ext_resource type="Texture2D" uid="uid://dwmg6hgoha5d5" path="res://assets/ui/ability_bow_normal.png" id="2_7y6br"]
+[ext_resource type="Texture2D" uid="uid://b2pvsb5deuslm" path="res://assets/ui/ability_bow_hover.png" id="3_3g12s"]
+[ext_resource type="Texture2D" uid="uid://cdcw4d0dl33qy" path="res://assets/ui/ability_bow_press.png" id="4_3msnn"]
 
 [node name="AbilityBow" type="Node"]
 script = ExtResource("1_fw65g")
+texture_normal = ExtResource("2_7y6br")
+texture_hover = ExtResource("3_3g12s")
+texture_press = ExtResource("4_3msnn")
 metadata/_custom_type_script = "uid://dl7biw0en2qpx"

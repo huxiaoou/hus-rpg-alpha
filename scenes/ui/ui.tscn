@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://ba8x35xwcb1qm"]
+[gd_scene load_steps=13 format=3 uid="uid://ba8x35xwcb1qm"]
 
+[ext_resource type="Script" uid="uid://d21i6u5ki281h" path="res://scenes/ui/ui_unit_abilities.gd" id="1_4kltc"]
 [ext_resource type="PackedScene" uid="uid://cmvmuakbaow42" path="res://scenes/ui/button_ability.tscn" id="1_u7n8c"]
 [ext_resource type="Texture2D" uid="uid://c3hhg7gy3tqei" path="res://assets/ui/ability_sword_normal.png" id="2_7vp6q"]
 [ext_resource type="Texture2D" uid="uid://bpihbm3dmqfvy" path="res://assets/ui/ability_move_normal.png" id="2_y220t"]
@@ -34,26 +35,28 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_u7n8c")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer"]
+[node name="UIUnitAbilities" type="HBoxContainer" parent="PanelContainer"]
 layout_mode = 2
 theme_override_constants/separation = -4
+script = ExtResource("1_4kltc")
+ui_button_ability_scene = ExtResource("1_u7n8c")
 
-[node name="ButtonAbilityMove" parent="PanelContainer/HBoxContainer" instance=ExtResource("1_u7n8c")]
+[node name="ButtonAbilityMove" parent="PanelContainer/UIUnitAbilities" instance=ExtResource("1_u7n8c")]
 layout_mode = 2
 texture_normal = ExtResource("2_y220t")
 texture_pressed = ExtResource("3_4kltc")
 texture_hover = ExtResource("4_hl07w")
 
-[node name="ButtonAbilitySword" parent="PanelContainer/HBoxContainer" instance=ExtResource("1_u7n8c")]
+[node name="ButtonAbilitySword" parent="PanelContainer/UIUnitAbilities" instance=ExtResource("1_u7n8c")]
 layout_mode = 2
 texture_normal = ExtResource("2_7vp6q")
 texture_pressed = ExtResource("3_jcn1r")
 texture_hover = ExtResource("4_uegxj")
 
-[node name="ButtonAbilityBow" parent="PanelContainer/HBoxContainer" instance=ExtResource("1_u7n8c")]
+[node name="ButtonAbilityBow" parent="PanelContainer/UIUnitAbilities" instance=ExtResource("1_u7n8c")]
 layout_mode = 2
 
-[node name="ButtonAbilityFireball" parent="PanelContainer/HBoxContainer" instance=ExtResource("1_u7n8c")]
+[node name="ButtonAbilityFireball" parent="PanelContainer/UIUnitAbilities" instance=ExtResource("1_u7n8c")]
 layout_mode = 2
 texture_normal = ExtResource("5_y220t")
 texture_pressed = ExtResource("6_4kltc")

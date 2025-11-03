@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bqwob2kmuchxg"]
+[gd_scene load_steps=7 format=3 uid="uid://bqwob2kmuchxg"]
 
 [ext_resource type="Script" uid="uid://epmx03egse45" path="res://scenes/units/unit_test.gd" id="1_ip78a"]
 [ext_resource type="SpriteFrames" uid="uid://emckyudplu5x" path="res://resources/sprite_frames/sprite_frames_valkyrie.tres" id="2_basw2"]
 [ext_resource type="PackedScene" uid="uid://dalshoc7gi076" path="res://scenes/abilities/director_abilities.tscn" id="3_lara0"]
 [ext_resource type="PackedScene" uid="uid://b3mfc486t6t6u" path="res://scenes/abilities/ability_move.tscn" id="4_basw2"]
+[ext_resource type="PackedScene" uid="uid://d2dlwxlof6euy" path="res://scenes/abilities/ability_bow.tscn" id="5_vd2bk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ohhv2"]
 size = Vector2(118, 120)
@@ -25,5 +26,7 @@ shape = SubResource("RectangleShape2D_ohhv2")
 [node name="DirectorAbilities" parent="." instance=ExtResource("3_lara0")]
 
 [node name="AbilityMove" parent="DirectorAbilities" instance=ExtResource("4_basw2")]
+
+[node name="AbilityBow" parent="DirectorAbilities" instance=ExtResource("5_vd2bk")]
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
