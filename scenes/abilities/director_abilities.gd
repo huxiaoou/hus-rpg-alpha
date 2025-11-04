@@ -3,7 +3,7 @@ extends Node
 class_name DirectorAbilities
 
 var is_performing: bool = false
-var performing_ability: AbilityBase = null
+var ability_selected: AbilityBase = null
 var abilities: Dictionary[String, AbilityBase] = { }
 
 
@@ -17,11 +17,32 @@ func get_ability(ability_id: String) -> AbilityBase:
 	return abilities.get(ability_id)
 
 
-func set_performing_ability(ability: AbilityBase) -> void:
-	performing_ability = ability
-	is_performing = true
-
-
 func on_ability_finished() -> void:
-	performing_ability.unit.animated_sprite_2d.play("idle")
+	ability_selected.unit.animated_sprite_2d.play("idle")
 	is_performing = false
+
+
+func set_selected_ability(ability: AbilityBase) -> void:
+	if is_performing:
+		return
+	if ability_selected == ability:
+		return
+
+	print("Select %s" % ability.ability_name)
+	ability_selected = ability
+
+
+func try_performing_selected_ability() -> void:
+	if is_performing:
+		print("Is performing %s" % ability_selected.ability_name)
+		return
+	if ability_selected == null:
+		return
+	var target_grid_pos: Vector2i = ManagerGrid.get_mouse_grid_pos()
+	is_performing = true
+	ability_selected.start(target_grid_pos, on_ability_finished)
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("left_mouse_click"):
+		try_performing_selected_ability()

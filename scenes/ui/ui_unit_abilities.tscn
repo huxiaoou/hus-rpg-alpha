@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://byc024y0vofmp"]
+
+[ext_resource type="Script" uid="uid://d21i6u5ki281h" path="res://scenes/ui/ui_unit_abilities.gd" id="1_f4qed"]
+
+[node name="UIUnitAbilities" type="HBoxContainer"]
+theme_override_constants/separation = -4
+script = ExtResource("1_f4qed")

@@ -12,24 +12,13 @@ signal unit_double_clicked(unit: UnitTest)
 var grid_pos: Vector2i:
 	get:
 		return ManagerGrid.get_grid_pos(global_position)
-var path: Array[Vector2]
 var last_click_time: int = 0
 
 
 func _ready() -> void:
 	global_position = ManagerGrid.get_world_pos(start_grid)
-
-
-func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("left_mouse_click"):
-		if director_abilities.is_performing:
-			print("%s is performing" % director_abilities.performing_ability.ability_name)
-			return
-		var mouse_grid_pos: Vector2i = ManagerGrid.get_mouse_grid_pos()
-		var ability_move: AbilityBase = director_abilities.get_ability("ability_move")
-		if ability_move != null:
-			director_abilities.set_performing_ability(ability_move)
-			ability_move.start(mouse_grid_pos, director_abilities.on_ability_finished)
+	ManagerUiSignals.ability_selected.connect(director_abilities.set_selected_ability)
+	director_abilities.set_selected_ability(director_abilities.get_ability("ability_move"))
 
 
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:

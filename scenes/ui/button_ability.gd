@@ -11,6 +11,7 @@ var ability: AbilityBase = null
 func _ready() -> void:
 	label_description.visible = false
 	label_description.text = description
+	pressed.connect(on_ability_selected)
 	return
 
 
@@ -23,9 +24,14 @@ func _on_mouse_exited() -> void:
 	label_description.visible = false
 
 
-func set_up(ability: AbilityBase) -> void:
-	self.ability = ability
+func set_up(_ability: AbilityBase) -> void:
+	self.ability = _ability
 	label_description.text = "%s\n%s" % [ability.ability_name, ability.ability_description]
 	texture_normal = ability.texture_normal
 	texture_hover = ability.texture_hover
 	texture_pressed = ability.texture_press
+
+
+func on_ability_selected() -> void:
+	ManagerUiSignals.ability_selected.emit(ability)
+	return

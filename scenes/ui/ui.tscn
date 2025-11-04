@@ -1,16 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://ba8x35xwcb1qm"]
+[gd_scene load_steps=4 format=3 uid="uid://ba8x35xwcb1qm"]
 
-[ext_resource type="Script" uid="uid://d21i6u5ki281h" path="res://scenes/ui/ui_unit_abilities.gd" id="1_4kltc"]
-[ext_resource type="PackedScene" uid="uid://cmvmuakbaow42" path="res://scenes/ui/button_ability.tscn" id="1_u7n8c"]
-[ext_resource type="Texture2D" uid="uid://c3hhg7gy3tqei" path="res://assets/ui/ability_sword_normal.png" id="2_7vp6q"]
-[ext_resource type="Texture2D" uid="uid://bpihbm3dmqfvy" path="res://assets/ui/ability_move_normal.png" id="2_y220t"]
-[ext_resource type="Texture2D" uid="uid://dda8s52olljk3" path="res://assets/ui/ability_move_press.png" id="3_4kltc"]
-[ext_resource type="Texture2D" uid="uid://dsyo0imwymshn" path="res://assets/ui/ability_sword_press.png" id="3_jcn1r"]
-[ext_resource type="Texture2D" uid="uid://c71ehhp8pq08x" path="res://assets/ui/ability_move_hover.png" id="4_hl07w"]
-[ext_resource type="Texture2D" uid="uid://cbm88rslm5fqe" path="res://assets/ui/ability_sword_hover.png" id="4_uegxj"]
-[ext_resource type="Texture2D" uid="uid://d4m1grwu02b4i" path="res://assets/ui/ability_fireball_normal.png" id="5_y220t"]
-[ext_resource type="Texture2D" uid="uid://bvfuriu735dly" path="res://assets/ui/ability_fireball_press.png" id="6_4kltc"]
-[ext_resource type="Texture2D" uid="uid://d3qnqqlkoa2b4" path="res://assets/ui/ability_fireball_hover.png" id="7_hl07w"]
+[ext_resource type="PackedScene" uid="uid://byc024y0vofmp" path="res://scenes/ui/ui_unit_abilities.tscn" id="1_u7n8c"]
+[ext_resource type="PackedScene" uid="uid://cmvmuakbaow42" path="res://scenes/ui/button_ability.tscn" id="2_f5cxw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u7n8c"]
 bg_color = Color(0, 0, 0, 1)
@@ -35,29 +26,6 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_u7n8c")
 
-[node name="UIUnitAbilities" type="HBoxContainer" parent="PanelContainer"]
+[node name="UIUnitAbilities" parent="PanelContainer" instance=ExtResource("1_u7n8c")]
 layout_mode = 2
-theme_override_constants/separation = -4
-script = ExtResource("1_4kltc")
-ui_button_ability_scene = ExtResource("1_u7n8c")
-
-[node name="ButtonAbilityMove" parent="PanelContainer/UIUnitAbilities" instance=ExtResource("1_u7n8c")]
-layout_mode = 2
-texture_normal = ExtResource("2_y220t")
-texture_pressed = ExtResource("3_4kltc")
-texture_hover = ExtResource("4_hl07w")
-
-[node name="ButtonAbilitySword" parent="PanelContainer/UIUnitAbilities" instance=ExtResource("1_u7n8c")]
-layout_mode = 2
-texture_normal = ExtResource("2_7vp6q")
-texture_pressed = ExtResource("3_jcn1r")
-texture_hover = ExtResource("4_uegxj")
-
-[node name="ButtonAbilityBow" parent="PanelContainer/UIUnitAbilities" instance=ExtResource("1_u7n8c")]
-layout_mode = 2
-
-[node name="ButtonAbilityFireball" parent="PanelContainer/UIUnitAbilities" instance=ExtResource("1_u7n8c")]
-layout_mode = 2
-texture_normal = ExtResource("5_y220t")
-texture_pressed = ExtResource("6_4kltc")
-texture_hover = ExtResource("7_hl07w")
+ui_button_ability_scene = ExtResource("2_f5cxw")
