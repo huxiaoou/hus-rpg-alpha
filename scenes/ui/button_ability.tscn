@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cmvmuakbaow42"]
 
 [ext_resource type="Script" uid="uid://di741767cd0fp" path="res://scenes/ui/button_ability.gd" id="4_1cmj8"]
-[ext_resource type="Theme" uid="uid://cmc345t3y1agn" path="res://assets/theme_ui.tres" id="5_ivd0o"]
+[ext_resource type="Theme" uid="uid://cmc345t3y1agn" path="res://resources/themes/theme_ui.tres" id="5_ivd0o"]
 
 [node name="ButtonAbility" type="TextureButton"]
 anchors_preset = 4
