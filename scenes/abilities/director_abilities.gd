@@ -18,7 +18,10 @@ func get_ability(ability_id: String) -> AbilityBase:
 
 
 func on_ability_finished() -> void:
-	ability_selected.unit.animated_sprite_2d.play("idle")
+	if ManagerGrid.is_on_ladder(ability_selected.unit.grid_pos):
+		ability_selected.unit.animated_sprite_2d.play("idle_on_ladder")
+	else:
+		ability_selected.unit.animated_sprite_2d.play("idle")
 	is_performing = false
 
 

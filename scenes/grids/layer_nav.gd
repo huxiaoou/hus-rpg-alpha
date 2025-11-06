@@ -30,6 +30,12 @@ func is_grid_walkable(grid_pos: Vector2i) -> bool:
 	return datasets_grid[grid_pos].walkable
 
 
+func is_on_ladder(grid_pos: Vector2i) -> bool:
+	var not_walkable_on_horizontal: bool = not (is_grid_walkable(grid_pos + Vector2i(1, 0)) or is_grid_walkable(grid_pos + Vector2i(-1, 0)))
+	var walkable_on_vertical: bool = is_grid_walkable(grid_pos + Vector2i(0, 1)) and is_grid_walkable(grid_pos + Vector2i(0, -1))
+	return not_walkable_on_horizontal and walkable_on_vertical
+
+
 func set_grid_walkablity(grid_pos: Vector2i, walkablity: bool) -> void:
 	datasets_grid[grid_pos].walkable = walkablity
 	a_star.set_point_solid(grid_pos, !walkablity)

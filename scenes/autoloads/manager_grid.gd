@@ -29,6 +29,10 @@ func get_nav_world_path(start_grid_pos: Vector2i, end_grid_pos: Vector2i) -> Arr
 	return world_path
 
 
+func is_on_ladder(grid_pos: Vector2i) -> bool:
+	return layer_nav.is_on_ladder(grid_pos)
+
+
 # --- manage grid
 func is_valid_grid(grid_pos: Vector2i) -> bool:
 	return layer_nav.datasets_grid.has(grid_pos)
