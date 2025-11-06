@@ -4,6 +4,7 @@ class_name AbilityMove
 
 @export var speed: float = 200
 var path: Array[Vector2] = []
+var is_climbing: bool = false
 
 
 func move(_target_world_pos: Vector2, delta: float) -> void:
@@ -21,6 +22,14 @@ func _process(delta: float) -> void:
 			unit.animated_sprite_2d.scale.x = 1
 		elif path[0].x < unit.global_position.x:
 			unit.animated_sprite_2d.scale.x = -1
+		if path[0].y != unit.global_position.y:
+			if not is_climbing:
+				unit.animated_sprite_2d.play("climb")
+				is_climbing = true
+		else:
+			if is_climbing:
+				unit.animated_sprite_2d.stop()
+				is_climbing = false
 		move(path[0], delta)
 		if unit.global_position == path[0]:
 			path.remove_at(0)
