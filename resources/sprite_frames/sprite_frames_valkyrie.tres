@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=31 format=3 uid="uid://emckyudplu5x"]
+[gd_resource type="SpriteFrames" load_steps=30 format=3 uid="uid://emckyudplu5x"]
 
 [ext_resource type="Texture2D" uid="uid://dn37sgjtyvkcd" path="res://assets/characters/knight_attack.png" id="1_xn448"]
 [ext_resource type="Texture2D" uid="uid://b7j0ho0pa35hs" path="res://assets/characters/knight_climb.png" id="2_2toha"]
@@ -23,17 +23,13 @@ region = Rect2(384, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n3xl7"]
 atlas = ExtResource("2_2toha")
-region = Rect2(0, 0, 128, 128)
+region = Rect2(128, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xu1p7"]
 atlas = ExtResource("2_2toha")
-region = Rect2(128, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0sojc"]
-atlas = ExtResource("2_2toha")
 region = Rect2(256, 0, 128, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xtukq"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_0sojc"]
 atlas = ExtResource("2_2toha")
 region = Rect2(384, 0, 128, 128)
 
@@ -137,9 +133,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0sojc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xtukq")
 }],
 "loop": true,
 "name": &"climb",

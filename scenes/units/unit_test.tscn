@@ -19,6 +19,7 @@ script = ExtResource("1_ip78a")
 sprite_frames = ExtResource("2_basw2")
 animation = &"climb"
 autoplay = "idle"
+frame_progress = 0.629645
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ohhv2")
