@@ -37,3 +37,18 @@ func start(targe_grid_pos: Vector2i, _on_ablility_finished: Callable) -> void:
 	unit.animated_sprite_2d.play("walk")
 	path = ManagerGrid.get_nav_world_path(unit.grid_pos, targe_grid_pos)
 	return
+
+
+func get_ability_grids(unit_grid: Vector2i = unit.grid_pos) -> Array[Vector2i]:
+	var results: Array[Vector2i] = []
+	var max_length = 3
+	for i: int in range(-max_length, max_length + 1):
+		for j: int in range(-max_length, max_length + 1):
+			if i == 0 and j == 0:
+				continue
+			var potential_grid: Vector2i = unit_grid + Vector2i(i, j)
+			var grid_path: Array[Vector2i] = ManagerGrid.get_nav_grid_path(unit_grid, potential_grid)
+			var length = ManagerGrid.get_grid_path_length(grid_path)
+			if length <= max_length and length > 0 and ManagerGrid.is_grid_walkable(potential_grid):
+				results.append(potential_grid)
+	return results

@@ -31,3 +31,7 @@ func finish() -> void:
 	on_ability_finished.call()
 	print("Finish ablility %s" % ability_name)
 	return
+
+
+func get_ability_grids(unit_grid: Vector2i = unit.grid_pos) -> Array[Vector2i]:
+	return []
