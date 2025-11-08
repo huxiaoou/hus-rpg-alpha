@@ -30,6 +30,7 @@ func _process(delta: float) -> void:
 		move(path[0], delta)
 		if unit.global_position == path[0]:
 			path.remove_at(0)
+			ManagerGrid.visualize_grid(get_ability_grids())
 
 
 func start(targe_grid_pos: Vector2i, _on_ablility_finished: Callable) -> void:

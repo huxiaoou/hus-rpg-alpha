@@ -33,6 +33,7 @@ func set_selected_ability(ability: AbilityBase) -> void:
 
 	print("Select %s" % ability.ability_name)
 	ability_selected = ability
+	ManagerGrid.visualize_grid(ability_selected.get_ability_grids())
 
 
 func try_performing_selected_ability() -> void:
@@ -42,6 +43,9 @@ func try_performing_selected_ability() -> void:
 	if ability_selected == null:
 		return
 	var target_grid_pos: Vector2i = ManagerGrid.get_mouse_grid_pos()
+	if target_grid_pos not in ability_selected.get_ability_grids():
+		print("Target grid %s is out of range for %s" % [str(target_grid_pos), ability_selected.ability_name])
+		return
 	is_performing = true
 	ability_selected.start(target_grid_pos, on_ability_finished)
 

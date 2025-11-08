@@ -1,6 +1,7 @@
 extends Node
 
 var layer_nav: LayerNav
+var layer_vis: LayerVis
 
 
 func get_grid_pos(world_pos: Vector2) -> Vector2i:
@@ -96,3 +97,12 @@ func hit_obstacle(start_grid: Vector2i, end_grid: Vector2i) -> bool:
 	var query_pars: PhysicsRayQueryParameters2D = PhysicsRayQueryParameters2D.create(start_pos_world, end_pos_world, 2)
 	var result: Dictionary = get_tree().root.world_2d.direct_space_state.intersect_ray(query_pars)
 	return not result.is_empty()
+
+# --- visualize grid ---
+
+
+func visualize_grid(grids: Array[Vector2i]) -> void:
+	layer_vis.clear()
+	for grid in grids:
+		layer_vis.set_cell(grid, 1, Vector2i(0, 0))
+	return
