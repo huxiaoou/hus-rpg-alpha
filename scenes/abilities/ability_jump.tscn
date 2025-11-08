@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://bwud22ity4meh"]
+
+[ext_resource type="Script" uid="uid://welxa7ab6y0g" path="res://scenes/abilities/ability_jump.gd" id="1_d831u"]
+[ext_resource type="Texture2D" uid="uid://bsv3okd2p2aw" path="res://assets/ui/ability_jump_normal.png" id="2_ntds7"]
+[ext_resource type="Texture2D" uid="uid://bcgj6sckdlds2" path="res://assets/ui/ability_jump_hover.png" id="3_18su1"]
+[ext_resource type="Texture2D" uid="uid://bdn3uiq2ovbg6" path="res://assets/ui/ability_jump_press.png" id="4_kj63q"]
+
+[node name="AbilityJump" type="Node"]
+script = ExtResource("1_d831u")
+ability_id = "ability_jump"
+ability_name = "Jump"
+ability_description = "Jump to a target position"
+texture_normal = ExtResource("2_ntds7")
+texture_hover = ExtResource("3_18su1")
+texture_press = ExtResource("4_kj63q")
+metadata/_custom_type_script = "uid://dl7biw0en2qpx"

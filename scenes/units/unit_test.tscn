@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://bqwob2kmuchxg"]
+[gd_scene load_steps=10 format=3 uid="uid://bqwob2kmuchxg"]
 
 [ext_resource type="Script" uid="uid://epmx03egse45" path="res://scenes/units/unit_test.gd" id="1_ip78a"]
 [ext_resource type="SpriteFrames" uid="uid://emckyudplu5x" path="res://resources/sprite_frames/sprite_frames_valkyrie.tres" id="2_basw2"]
 [ext_resource type="PackedScene" uid="uid://dalshoc7gi076" path="res://scenes/abilities/director_abilities.tscn" id="3_lara0"]
 [ext_resource type="PackedScene" uid="uid://b3mfc486t6t6u" path="res://scenes/abilities/ability_move.tscn" id="4_basw2"]
 [ext_resource type="PackedScene" uid="uid://cknsx21bcgolb" path="res://scenes/abilities/ability_sword.tscn" id="5_gtr1m"]
+[ext_resource type="PackedScene" uid="uid://bwud22ity4meh" path="res://scenes/abilities/ability_jump.tscn" id="5_ublqq"]
 [ext_resource type="PackedScene" uid="uid://d2dlwxlof6euy" path="res://scenes/abilities/ability_bow.tscn" id="5_vd2bk"]
 [ext_resource type="PackedScene" uid="uid://dqcrr0rs48fxi" path="res://scenes/abilities/ability_fireball.tscn" id="7_ublqq"]
 
@@ -17,8 +18,9 @@ script = ExtResource("1_ip78a")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("2_basw2")
-animation = &"climb"
+animation = &"jump"
 autoplay = "idle"
+frame_progress = 0.0158392
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ohhv2")
@@ -26,6 +28,8 @@ shape = SubResource("RectangleShape2D_ohhv2")
 [node name="DirectorAbilities" parent="." instance=ExtResource("3_lara0")]
 
 [node name="AbilityMove" parent="DirectorAbilities" instance=ExtResource("4_basw2")]
+
+[node name="AbilityJump" parent="DirectorAbilities" instance=ExtResource("5_ublqq")]
 
 [node name="AbilitySword" parent="DirectorAbilities" instance=ExtResource("5_gtr1m")]
 
