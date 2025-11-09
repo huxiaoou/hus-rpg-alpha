@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://w03eqo3mfmsm"]
+
+[ext_resource type="PackedScene" uid="uid://bqwob2kmuchxg" path="res://scenes/units/unit_test.tscn" id="1_7wqv3"]
+[ext_resource type="PackedScene" uid="uid://dqcrr0rs48fxi" path="res://scenes/abilities/ability_fireball.tscn" id="2_eb5ca"]
+
+[node name="UnitMage" instance=ExtResource("1_7wqv3")]
+
+[node name="AbilityFireball" parent="DirectorAbilities" index="2" instance=ExtResource("2_eb5ca")]

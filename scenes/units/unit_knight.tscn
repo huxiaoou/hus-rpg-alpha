@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://dx3uvyo14wwms"]
+
+[ext_resource type="PackedScene" uid="uid://bqwob2kmuchxg" path="res://scenes/units/unit_test.tscn" id="1_vbc8a"]
+[ext_resource type="PackedScene" uid="uid://cknsx21bcgolb" path="res://scenes/abilities/ability_sword.tscn" id="2_2iwql"]
+
+[node name="UnitKnight" instance=ExtResource("1_vbc8a")]
+
+[node name="AbilitySword" parent="DirectorAbilities" index="2" instance=ExtResource("2_2iwql")]

@@ -38,3 +38,4 @@ func _unhandled_input(event: InputEvent) -> void:
 		else:
 			single_clicked.emit()
 		last_click_time = this_click_time
+		get_viewport().set_input_as_handled()

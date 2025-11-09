@@ -18,6 +18,7 @@ var grid_pos: Vector2i:
 
 
 func _ready() -> void:
+	unit_selected.connect(on_unit_selected)
 	collision_shape_unit.single_clicked.connect(on_shape_single_clicked)
 	collision_shape_unit.double_clicked.connect(on_shape_double_clicked)
 	ManagerUiSignals.ability_selected.connect(director_abilities.set_selected_ability)
@@ -34,4 +35,5 @@ func on_shape_double_clicked() -> void:
 
 
 func on_unit_selected(unit: UnitTest) -> void:
+	print("on_unit_selected_triggered")
 	ManagerGame.set_selected_unit(unit)

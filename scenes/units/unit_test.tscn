@@ -1,13 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://bqwob2kmuchxg"]
+[gd_scene load_steps=8 format=3 uid="uid://bqwob2kmuchxg"]
 
 [ext_resource type="Script" uid="uid://epmx03egse45" path="res://scenes/units/unit_test.gd" id="1_ip78a"]
 [ext_resource type="SpriteFrames" uid="uid://emckyudplu5x" path="res://resources/sprite_frames/sprite_frames_valkyrie.tres" id="2_basw2"]
 [ext_resource type="PackedScene" uid="uid://dalshoc7gi076" path="res://scenes/abilities/director_abilities.tscn" id="3_lara0"]
 [ext_resource type="PackedScene" uid="uid://b3mfc486t6t6u" path="res://scenes/abilities/ability_move.tscn" id="4_basw2"]
-[ext_resource type="PackedScene" uid="uid://cknsx21bcgolb" path="res://scenes/abilities/ability_sword.tscn" id="5_gtr1m"]
 [ext_resource type="PackedScene" uid="uid://bwud22ity4meh" path="res://scenes/abilities/ability_jump.tscn" id="5_ublqq"]
-[ext_resource type="PackedScene" uid="uid://d2dlwxlof6euy" path="res://scenes/abilities/ability_bow.tscn" id="5_vd2bk"]
-[ext_resource type="PackedScene" uid="uid://dqcrr0rs48fxi" path="res://scenes/abilities/ability_fireball.tscn" id="7_ublqq"]
 [ext_resource type="Script" uid="uid://c1nbor0whuw6o" path="res://scenes/units/collision_shape_unit.gd" id="9_q6wby"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ublqq"]
@@ -28,12 +25,6 @@ frame_progress = 0.0158392
 [node name="AbilityMove" parent="DirectorAbilities" instance=ExtResource("4_basw2")]
 
 [node name="AbilityJump" parent="DirectorAbilities" instance=ExtResource("5_ublqq")]
-
-[node name="AbilitySword" parent="DirectorAbilities" instance=ExtResource("5_gtr1m")]
-
-[node name="AbilityBow" parent="DirectorAbilities" instance=ExtResource("5_vd2bk")]
-
-[node name="AbilityFireball" parent="DirectorAbilities" instance=ExtResource("7_ublqq")]
 
 [node name="CollisionShapeUnit" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ublqq")
