@@ -31,7 +31,7 @@ func set_selected_ability(ability: AbilityBase) -> void:
 	if ability_selected == ability:
 		return
 
-	print("Select %s" % ability.ability_name)
+	print("Select ability %s" % ability.ability_name)
 	ability_selected = ability
 	ManagerGrid.visualize_grid(ability_selected.get_ability_grids())
 
@@ -41,6 +41,8 @@ func try_performing_selected_ability() -> void:
 		print("Is performing %s" % ability_selected.ability_name)
 		return
 	if ability_selected == null:
+		return
+	if ManagerGame._unit_selected != ability_selected.unit:
 		return
 	var target_grid_pos: Vector2i = ManagerGrid.get_mouse_grid_pos()
 	if target_grid_pos not in ability_selected.get_ability_grids():
