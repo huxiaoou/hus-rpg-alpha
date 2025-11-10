@@ -37,5 +37,4 @@ func on_shape_double_clicked() -> void:
 
 
 func on_unit_selected(unit: UnitTest) -> void:
-	print("on_unit_selected_triggered")
 	ManagerGame.set_selected_unit(unit)

@@ -1,7 +1,7 @@
 extends Node
 
 @onready var camera_control: CameraControl = $CameraControl
-
+@onready var state_machine: StateMachine = $StateMachine
 
 func _ready() -> void:
 	for unit: UnitTest in ManagerGame.units_player:
@@ -19,3 +19,5 @@ func _ready() -> void:
 		print("%s is picked as default" % unit.name)
 		ManagerGame.set_selected_unit(unit)
 		unit.unit_double_clicked.emit(unit)
+
+	state_machine.launch()

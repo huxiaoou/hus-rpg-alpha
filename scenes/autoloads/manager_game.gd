@@ -5,7 +5,7 @@ var units_enemy: Array[UnitTest]
 
 signal unit_selected(unit: UnitTest)
 
-var _unit_selected: UnitTest
+var selected_unit: UnitTest
 var ability_is_selected: bool = false
 
 
@@ -19,14 +19,17 @@ func register(unit: UnitTest) -> void:
 func set_selected_unit(unit: UnitTest) -> void:
 	if unit.director_abilities.is_performing:
 		return
-	if _unit_selected == unit:
+	if selected_unit == unit:
+		selected_unit.director_abilities.set_selected_ability(
+			selected_unit.director_abilities.get_ability("ability_move"),
+		)
 		return
-	_unit_selected = unit
-	print("%s selected" % _unit_selected.name)
-	_unit_selected.director_abilities.set_selected_ability(
-		_unit_selected.director_abilities.get_ability("ability_move"),
+	selected_unit = unit
+	print("%s selected" % selected_unit.name)
+	selected_unit.director_abilities.set_selected_ability(
+		selected_unit.director_abilities.get_ability("ability_move"),
 	)
-	unit_selected.emit(_unit_selected)
+	unit_selected.emit(selected_unit)
 
 
 func set_ability_selected() -> void:

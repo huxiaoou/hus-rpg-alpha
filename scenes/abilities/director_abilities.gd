@@ -49,7 +49,7 @@ func try_performing_selected_ability() -> void:
 	if is_performing:
 		print("Is performing %s" % ability_selected.ability_name)
 		return
-	if ManagerGame._unit_selected != ability_selected.unit:
+	if ManagerGame.selected_unit != ability_selected.unit:
 		return
 	var target_grid_pos: Vector2i = ManagerGrid.get_mouse_grid_pos()
 	if target_grid_pos not in ability_selected.get_ability_grids():
@@ -57,10 +57,3 @@ func try_performing_selected_ability() -> void:
 		return
 	is_performing = true
 	ability_selected.start(target_grid_pos, on_ability_finished)
-
-
-func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("left_mouse_click"):
-		try_performing_selected_ability()
-	elif event.is_action_pressed("right_mouse_click"):
-		unselect_ability()

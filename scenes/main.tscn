@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://f6kb1oflhx8f"]
+[gd_scene load_steps=17 format=4 uid="uid://f6kb1oflhx8f"]
 
 [ext_resource type="PackedScene" uid="uid://0i7jxci2k0eo" path="res://scenes/backgrounds/bg_parallax.tscn" id="1_0wfyh"]
 [ext_resource type="Script" uid="uid://e8aoy3wscbse" path="res://scenes/main.gd" id="1_tefeu"]
@@ -10,9 +10,12 @@
 [ext_resource type="PackedScene" uid="uid://cabrqse2bpq4w" path="res://scenes/ui/grid_indicator.tscn" id="6_o6xl0"]
 [ext_resource type="Script" uid="uid://d17ctmf0lse3v" path="res://scenes/grids/layer_visual.gd" id="7_ya4ey"]
 [ext_resource type="PackedScene" uid="uid://ba8x35xwcb1qm" path="res://scenes/ui/ui.tscn" id="9_85g3d"]
+[ext_resource type="PackedScene" uid="uid://r4n6fs1kgsti" path="res://scenes/state_machine/state_machine.tscn" id="11_jkv2x"]
 [ext_resource type="PackedScene" uid="uid://dx3uvyo14wwms" path="res://scenes/units/unit_knight.tscn" id="11_trceg"]
 [ext_resource type="PackedScene" uid="uid://b4oc3ypxc0n80" path="res://scenes/units/unit_ranger.tscn" id="12_a8y0u"]
+[ext_resource type="Script" uid="uid://bbfaxjnysswan" path="res://scenes/state_machine/state_turn_player.gd" id="12_jbj1t"]
 [ext_resource type="PackedScene" uid="uid://w03eqo3mfmsm" path="res://scenes/units/unit_mage.tscn" id="13_jkv2x"]
+[ext_resource type="Script" uid="uid://clrtbre2rrybg" path="res://scenes/state_machine/state_turn_enemy.gd" id="13_muem4"]
 
 [node name="main" type="Node"]
 script = ExtResource("1_tefeu")
@@ -50,6 +53,19 @@ position = Vector2(960, 512)
 view_lim_right_down = Vector2i(9600, 1080)
 
 [node name="UI" parent="." instance=ExtResource("9_85g3d")]
+
+[node name="StateMachine" parent="." node_paths=PackedStringArray("starting_state") instance=ExtResource("11_jkv2x")]
+starting_state = NodePath("StateTurnPlayer")
+
+[node name="StateTurnPlayer" type="Node" parent="StateMachine"]
+script = ExtResource("12_jbj1t")
+state_name = "TurnPlayer"
+metadata/_custom_type_script = "uid://b7du7lb48x16e"
+
+[node name="StateTurnEnemy" type="Node" parent="StateMachine"]
+script = ExtResource("13_muem4")
+state_name = "TurnEnemy"
+metadata/_custom_type_script = "uid://b7du7lb48x16e"
 
 [node name="UnitKnight" parent="." instance=ExtResource("11_trceg")]
 start_grid = Vector2i(6, 5)
