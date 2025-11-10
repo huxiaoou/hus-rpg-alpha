@@ -5,4 +5,9 @@
 
 [node name="UnitKnight" instance=ExtResource("1_vbc8a")]
 
+[node name="AnimatedSprite2D" parent="." index="0"]
+animation = &"walk"
+frame = 0
+frame_progress = 0.0
+
 [node name="AbilitySword" parent="DirectorAbilities" index="2" instance=ExtResource("2_2iwql")]
