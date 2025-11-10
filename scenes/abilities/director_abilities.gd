@@ -34,13 +34,20 @@ func set_selected_ability(ability: AbilityBase) -> void:
 	print("Select ability %s" % ability.ability_name)
 	ability_selected = ability
 	ManagerGrid.visualize_grid(ability_selected.get_ability_grids())
+	ManagerGame.set_ability_selected()
+
+
+func unselect_ability() -> void:
+	ability_selected = null
+	ManagerGrid.layer_vis.clear()
+	ManagerGame.set_ability_unselected()
 
 
 func try_performing_selected_ability() -> void:
+	if ability_selected == null:
+		return
 	if is_performing:
 		print("Is performing %s" % ability_selected.ability_name)
-		return
-	if ability_selected == null:
 		return
 	if ManagerGame._unit_selected != ability_selected.unit:
 		return
@@ -55,3 +62,5 @@ func try_performing_selected_ability() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("left_mouse_click"):
 		try_performing_selected_ability()
+	elif event.is_action_pressed("right_mouse_click"):
+		unselect_ability()

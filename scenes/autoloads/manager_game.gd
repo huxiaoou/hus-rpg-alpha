@@ -6,6 +6,7 @@ var units_enemy: Array[UnitTest]
 signal unit_selected(unit: UnitTest)
 
 var _unit_selected: UnitTest
+var ability_is_selected: bool = false
 
 
 func register(unit: UnitTest) -> void:
@@ -26,3 +27,11 @@ func set_selected_unit(unit: UnitTest) -> void:
 		_unit_selected.director_abilities.get_ability("ability_move"),
 	)
 	unit_selected.emit(_unit_selected)
+
+
+func set_ability_selected() -> void:
+	ability_is_selected = true
+
+
+func set_ability_unselected() -> void:
+	ability_is_selected = false

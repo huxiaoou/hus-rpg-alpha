@@ -27,11 +27,13 @@ func _ready() -> void:
 
 
 func on_shape_single_clicked() -> void:
-	unit_selected.emit(self)
+	if not ManagerGame.ability_is_selected:
+		unit_selected.emit(self)
 
 
 func on_shape_double_clicked() -> void:
-	unit_double_clicked.emit(self)
+	if not ManagerGame.ability_is_selected:
+		unit_double_clicked.emit(self)
 
 
 func on_unit_selected(unit: UnitTest) -> void:
