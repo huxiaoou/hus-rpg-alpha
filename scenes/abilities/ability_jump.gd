@@ -27,10 +27,14 @@ func _process(delta: float) -> void:
 			ManagerGrid.visualize_grid(get_ability_grids())
 
 
-func start(targe_grid_pos: Vector2i, _on_ablility_finished: Callable) -> void:
-	super.start(targe_grid_pos, _on_ablility_finished)
+func start(target_grid_pos: Vector2i, _on_ablility_finished: Callable) -> void:
+	super.start(target_grid_pos, _on_ablility_finished)
 	unit.animated_sprite_2d.play("jump")
-	path = [ManagerGrid.get_world_pos(unit.grid_pos), ManagerGrid.get_world_pos(targe_grid_pos)]
+	path = [ManagerGrid.get_world_pos(unit.grid_pos), ManagerGrid.get_world_pos(target_grid_pos)]
+	ManagerGrid.set_grid_walkablity(unit.grid_pos, true)
+	ManagerGrid.set_grid_occupant(unit.grid_pos, null)
+	ManagerGrid.set_grid_walkablity(target_grid_pos, false)
+	ManagerGrid.set_grid_occupant(target_grid_pos, unit)
 	return
 
 

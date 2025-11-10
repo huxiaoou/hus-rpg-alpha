@@ -59,7 +59,7 @@ func get_nav_grid_path(start_grid_pos: Vector2i, end_grid_pos: Vector2i) -> Arra
 	if not a_star.is_in_boundsv(end_grid_pos):
 		#print("Destination %s is unreachable" % end_grid_pos)
 		return []
-	var path: Array[Vector2i] = a_star.get_id_path(start_grid_pos, end_grid_pos, true)
+	var path: Array[Vector2i] = a_star.get_id_path(start_grid_pos, end_grid_pos, false)
 	#if not path.is_empty() and path[-1] != end_grid_pos:
 	#print("No directive path available for %s" % end_grid_pos)
 	return path

@@ -16,7 +16,7 @@ func _ready() -> void:
 
 
 func _gui_input(event: InputEvent) -> void:
-	if event.is_action_pressed("right_click"):
+	if event.is_action_pressed("right_mouse_click"):
 		label_description.visible = !label_description.visible
 
 
