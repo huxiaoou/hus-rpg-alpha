@@ -59,12 +59,12 @@ starting_state = NodePath("StateTurnPlayer")
 
 [node name="StateTurnPlayer" type="Node" parent="StateMachine"]
 script = ExtResource("12_jbj1t")
-state_name = "TurnPlayer"
+state_name = "StateTurnPlayer"
 metadata/_custom_type_script = "uid://b7du7lb48x16e"
 
 [node name="StateTurnEnemy" type="Node" parent="StateMachine"]
 script = ExtResource("13_muem4")
-state_name = "TurnEnemy"
+state_name = "StateTurnEnemy"
 metadata/_custom_type_script = "uid://b7du7lb48x16e"
 
 [node name="UnitKnight" parent="." instance=ExtResource("11_trceg")]

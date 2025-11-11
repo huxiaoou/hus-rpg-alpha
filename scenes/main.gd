@@ -3,6 +3,7 @@ extends Node
 @onready var camera_control: CameraControl = $CameraControl
 @onready var state_machine: StateMachine = $StateMachine
 
+
 func _ready() -> void:
 	for unit: UnitTest in ManagerGame.units_player:
 		unit.unit_double_clicked.connect(camera_control.on_unit_double_clicked)

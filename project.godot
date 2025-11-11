@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 ManagerGrid="*res://scenes/autoloads/manager_grid.tscn"
 ManagerUiSignals="*res://scenes/autoloads/manager_ui_signals.tscn"
 ManagerGame="*res://scenes/autoloads/manager_game.tscn"
+ManagerTurn="*res://scenes/autoloads/manager_turn.tscn"
 
 [display]
 

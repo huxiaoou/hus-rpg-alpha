@@ -1,7 +1,45 @@
-[gd_resource type="Theme" load_steps=5 format=3 uid="uid://cmc345t3y1agn"]
+[gd_resource type="Theme" load_steps=12 format=3 uid="uid://cmc345t3y1agn"]
 
 [ext_resource type="FontFile" uid="uid://bulv0qbdfbjaf" path="res://assets/fonts/Font_Fantasy.ttf" id="1_tkx5x"]
+[ext_resource type="FontFile" uid="uid://vecd65g7y8nc" path="res://assets/fonts/Font_Fantasy_M_Edit.ttf" id="2_dexye"]
 [ext_resource type="Texture2D" uid="uid://dqns8i4em0h8t" path="res://assets/ui/3.png" id="2_fs3rm"]
+[ext_resource type="Texture2D" uid="uid://d2cuylvgeavt8" path="res://assets/ui/Plain Paper UI SpriteSheet.png" id="3_fs3rm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dexye"]
+bg_color = Color(0.182749, 0.580533, 0.168702, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fs3rm"]
+bg_color = Color(0.133735, 0.435739, 0.12258, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j405j"]
+bg_color = Color(0.0650666, 0.252142, 0.0579736, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dexye"]
 atlas = ExtResource("2_fs3rm")
@@ -14,12 +52,30 @@ texture_margin_right = 36.0
 texture_margin_bottom = 42.0
 region_rect = Rect2(2, 1, 466, 335)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_j405j"]
+atlas = ExtResource("3_fs3rm")
+region = Rect2(576, 480, 559, 80)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3ml7x"]
+texture = SubResource("AtlasTexture_j405j")
+texture_margin_left = 26.0
+texture_margin_top = 26.0
+texture_margin_right = 26.0
+texture_margin_bottom = 26.0
+
 [resource]
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/font_sizes/font_size = 24
+Button/fonts/font = ExtResource("1_tkx5x")
+Button/styles/hover = SubResource("StyleBoxFlat_dexye")
+Button/styles/normal = SubResource("StyleBoxFlat_fs3rm")
+Button/styles/pressed = SubResource("StyleBoxFlat_j405j")
 Label/colors/font_color = Color(1, 1, 1, 0.784314)
 Label/colors/font_shadow_color = Color(0.233926, 0.233925, 0.233925, 0)
 Label/constants/line_spacing = -12
 Label/constants/outline_size = 1
 Label/constants/paragraph_spacing = 0
 Label/font_sizes/font_size = 18
-Label/fonts/font = ExtResource("1_tkx5x")
+Label/fonts/font = ExtResource("2_dexye")
 Label/styles/normal = SubResource("StyleBoxTexture_j405j")
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_3ml7x")

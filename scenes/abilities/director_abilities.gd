@@ -38,6 +38,8 @@ func set_selected_ability(ability: AbilityBase) -> void:
 
 
 func unselect_ability() -> void:
+	if is_performing:
+		return
 	ability_selected = null
 	ManagerGrid.layer_vis.clear()
 	ManagerGame.set_ability_unselected()
