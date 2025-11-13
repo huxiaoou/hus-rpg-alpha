@@ -2,6 +2,8 @@ extends Node
 
 signal turn_player_started()
 signal turn_enemy_started()
+signal turn_player_entered()
+signal turn_enemy_entered()
 
 
 func start_turn_player() -> void:

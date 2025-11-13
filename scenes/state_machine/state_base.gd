@@ -9,6 +9,13 @@ signal state_changed(state_name: String)
 
 func enter() -> void:
 	print("Enter %s" % state_name)
+	match state_name:
+		"StateTurnPlayer":
+			ManagerTurn.turn_player_entered.emit()
+		"StateTurnEnemy":
+			ManagerTurn.turn_enemy_entered.emit()
+		_:
+			pass
 	return
 
 
