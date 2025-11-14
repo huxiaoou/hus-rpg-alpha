@@ -19,6 +19,8 @@ func register(unit: UnitTest) -> void:
 func set_selected_unit(unit: UnitTest) -> void:
 	if unit.director_abilities.is_performing:
 		return
+	if unit.is_enemy:
+		return
 	if selected_unit == unit:
 		selected_unit.director_abilities.set_selected_ability(
 			selected_unit.director_abilities.get_ability("ability_move"),

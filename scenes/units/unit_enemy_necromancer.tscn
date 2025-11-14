@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqcp18gx1m6l0"]
+
+[ext_resource type="PackedScene" uid="uid://bqwob2kmuchxg" path="res://scenes/units/unit_test.tscn" id="1_iew3n"]
+[ext_resource type="PackedScene" uid="uid://dqcrr0rs48fxi" path="res://scenes/abilities/ability_fireball.tscn" id="2_mbaie"]
+[ext_resource type="SpriteFrames" uid="uid://creiceka0ha7a" path="res://resources/sprite_frames/sprite_frames_necromancer.tres" id="2_mhgtk"]
+
+[node name="UnitEnemyNecromancer" instance=ExtResource("1_iew3n")]
+is_enemy = true
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = ExtResource("2_mhgtk")
+animation = &"idle_on_ladder"
+frame_progress = 0.00615587
+
+[node name="AbilityFireball" parent="DirectorAbilities" index="2" instance=ExtResource("2_mbaie")]

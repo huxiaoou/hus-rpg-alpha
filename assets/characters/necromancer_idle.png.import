@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkx64ghmwdr4o"
-path="res://.godot/imported/valkyrie_1_idle.png-5786a047ecc06dc47fca30b8a6799c6c.ctex"
+uid="uid://rrwjbac0uhgm"
+path="res://.godot/imported/necromancer_idle.png-359c19bb19793a466f36d51acc560410.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/valkyrie_1_idle.png"
-dest_files=["res://.godot/imported/valkyrie_1_idle.png-5786a047ecc06dc47fca30b8a6799c6c.ctex"]
+source_file="res://assets/characters/necromancer_idle.png"
+dest_files=["res://.godot/imported/necromancer_idle.png-359c19bb19793a466f36d51acc560410.ctex"]
 
 [params]
 

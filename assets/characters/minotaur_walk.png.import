@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dj3wlh3mv5ai6"
-path="res://.godot/imported/valkyrie_1_attack.png-4483894798d1ec6157afe4a044300de7.ctex"
+uid="uid://bbnoubk2jbyvd"
+path="res://.godot/imported/minotaur_walk.png-b34c3206604825b5fe8d86bb00c6496c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/valkyrie_1_attack.png"
-dest_files=["res://.godot/imported/valkyrie_1_attack.png-4483894798d1ec6157afe4a044300de7.ctex"]
+source_file="res://assets/characters/minotaur_walk.png"
+dest_files=["res://.godot/imported/minotaur_walk.png-b34c3206604825b5fe8d86bb00c6496c.ctex"]
 
 [params]
 
