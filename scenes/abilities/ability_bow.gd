@@ -2,9 +2,19 @@ extends AbilityBase
 
 class_name AbilityBow
 
-func start(targe_grid_pos: Vector2i, _on_ablility_finished: Callable) -> void:
-	super.start(targe_grid_pos, _on_ablility_finished)
-	finish()
+@export var scene_bow: PackedScene
+
+
+func start(target_grid_pos: Vector2i, _on_ablility_finished: Callable) -> void:
+	super.start(target_grid_pos, _on_ablility_finished)
+	if target_grid_pos.x > unit.grid_pos.x:
+		unit.animated_sprite_2d.scale = Vector2(1, 1)
+	elif target_grid_pos.x < unit.grid_pos.x:
+		unit.animated_sprite_2d.scale = Vector2(-1, 1)
+
+	var bow: Bow = scene_bow.instantiate()
+	unit.slot_weapon.add_child(bow)
+	bow.setup(finish, unit, target_grid_pos)
 	return
 
 

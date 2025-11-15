@@ -24,7 +24,7 @@ func setup(finish_ability: Callable, unit: UnitTest, target_grid_pos: Vector2i) 
 
 
 func deal_damage() -> void:
-	if target != null and target.is_enemy != unit.is_enemy:
+	if target and target.is_enemy != unit.is_enemy:
 		target.take_damage(damage)
 
 
