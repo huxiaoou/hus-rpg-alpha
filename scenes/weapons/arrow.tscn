@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bv3ftagddudie"]
+[gd_scene load_steps=4 format=3 uid="uid://bv3ftagddudie"]
 
 [ext_resource type="Script" uid="uid://dcj5d3i8u6wxf" path="res://scenes/weapons/projectile.gd" id="1_j1yim"]
 [ext_resource type="Texture2D" uid="uid://c6tyuadqgmv6t" path="res://assets/weapons/Arrow.png" id="1_sr7iq"]
+[ext_resource type="AudioStream" uid="uid://bk63ps6qci1ti" path="res://assets/audios/arrow-body-impact.mp3" id="3_spdgb"]
 
 [node name="Arrow" type="Node2D"]
 script = ExtResource("1_j1yim")
@@ -9,3 +10,6 @@ script = ExtResource("1_j1yim")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("1_sr7iq")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_spdgb")

@@ -4,6 +4,7 @@ class_name Projectile
 
 @export var damage: int = 4
 @export var speed: int = 700
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 var finish_ability: Callable
 var unit: UnitTest
@@ -16,6 +17,7 @@ func setup(finish_ability: Callable, unit: UnitTest, target_grid_pos: Vector2i) 
 	self.unit = unit
 	self.target_grid_pos = target_grid_pos
 	self.target_world_pos = ManagerGrid.get_world_pos(target_grid_pos)
+	audio_stream_player_2d.finished.connect(on_hit_sound_played)
 	look_at(target_world_pos)
 	return
 
@@ -29,6 +31,12 @@ func deal_damage() -> void:
 func _process(delta: float) -> void:
 	global_position = global_position.move_toward(target_world_pos, speed * delta)
 	if global_position == target_world_pos:
-		deal_damage()
-		finish_ability.call()
-		queue_free()
+		audio_stream_player_2d.play()
+		visible = false
+		set_process(false)
+
+
+func on_hit_sound_played() -> void:
+	deal_damage()
+	finish_ability.call()
+	queue_free()
