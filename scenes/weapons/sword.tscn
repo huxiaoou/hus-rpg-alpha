@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://c1wk22312ca0w"]
+[gd_scene load_steps=7 format=3 uid="uid://c1wk22312ca0w"]
 
 [ext_resource type="Script" uid="uid://dsvwfa34dl01p" path="res://scenes/weapons/sword.gd" id="1_3pnln"]
 [ext_resource type="Texture2D" uid="uid://cvss2mmd6465x" path="res://assets/weapons/5.png" id="1_o616w"]
+[ext_resource type="AudioStream" uid="uid://bslph3l4p00e0" path="res://assets/audios/dragon-studio-sword-blade-slicing-flesh.mp3" id="3_58ehi"]
 
 [sub_resource type="Animation" id="Animation_3pnln"]
 resource_name = "attack"
@@ -36,6 +37,21 @@ tracks/1/keys = {
 "method": &"animation_finished"
 }]
 }
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer2D")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.5809,
+"start_offset": 0.1312,
+"stream": ExtResource("3_58ehi")
+}],
+"times": PackedFloat32Array(0.164968)
+}
+tracks/2/use_blend = true
 
 [sub_resource type="Animation" id="Animation_58ehi"]
 length = 0.001
@@ -70,3 +86,5 @@ texture = ExtResource("1_o616w")
 libraries = {
 &"": SubResource("AnimationLibrary_gwb47")
 }
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
