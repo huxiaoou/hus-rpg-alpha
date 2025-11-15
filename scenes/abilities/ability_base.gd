@@ -33,5 +33,5 @@ func finish() -> void:
 	return
 
 
-func get_ability_grids(unit_grid: Vector2i = unit.grid_pos) -> Array[Vector2i]:
+func get_ability_grids(_unit_grid: Vector2i = unit.grid_pos) -> Array[Vector2i]:
 	return []

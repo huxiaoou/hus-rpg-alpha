@@ -1,3 +1,3 @@
 extends Node
 
-signal ability_selected(ability: AbilityBase)
+signal ability_selected(_ability: AbilityBase)
