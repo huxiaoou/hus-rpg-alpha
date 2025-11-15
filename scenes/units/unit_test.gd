@@ -8,6 +8,7 @@ class_name UnitTest
 @onready var director_abilities: DirectorAbilities = $DirectorAbilities
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var collision_shape_unit: CollisionShapeUnit = $CollisionShapeUnit
+@onready var slot_weapon: Node2D = $AnimatedSprite2D/SlotWeapon
 
 signal unit_double_clicked(unit: UnitTest)
 signal unit_selected(unit: UnitTest)
@@ -38,3 +39,7 @@ func on_shape_double_clicked() -> void:
 
 func on_unit_selected(unit: UnitTest) -> void:
 	ManagerGame.set_selected_unit(unit)
+
+
+func take_damage(damage: int) -> void:
+	print("%s take %d damage" % [name, damage])

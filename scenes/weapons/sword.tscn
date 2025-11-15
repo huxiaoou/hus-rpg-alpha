@@ -1,0 +1,72 @@
+[gd_scene load_steps=6 format=3 uid="uid://c1wk22312ca0w"]
+
+[ext_resource type="Script" uid="uid://dsvwfa34dl01p" path="res://scenes/weapons/sword.gd" id="1_3pnln"]
+[ext_resource type="Texture2D" uid="uid://cvss2mmd6465x" path="res://assets/weapons/5.png" id="1_o616w"]
+
+[sub_resource type="Animation" id="Animation_3pnln"]
+resource_name = "attack"
+length = 0.7
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0391824, 0.0875598, 0.165925, 0.274579, 0.4, 0.6, 0.65, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [4.71239, 5.02655, 5.34071, 5.65487, 5.96903, 6.28319, 5.75959, 5.23599, 4.71239]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"deal_damage"
+}, {
+"args": [],
+"method": &"animation_finished"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_58ehi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [4.71239]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gwb47"]
+_data = {
+&"RESET": SubResource("Animation_58ehi"),
+&"attack": SubResource("Animation_3pnln")
+}
+
+[node name="Sword" type="Node2D"]
+script = ExtResource("1_3pnln")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 4.71239
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_o616w")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_gwb47")
+}

@@ -2,9 +2,19 @@ extends AbilityBase
 
 class_name AbilitySword
 
-func start(targe_grid_pos: Vector2i, _on_ablility_finished: Callable) -> void:
-	super.start(targe_grid_pos, _on_ablility_finished)
-	finish()
+@export var scene_sword: PackedScene = null
+
+
+func start(target_grid_pos: Vector2i, _on_ablility_finished: Callable) -> void:
+	super.start(target_grid_pos, _on_ablility_finished)
+	if target_grid_pos.x > unit.grid_pos.x:
+		unit.animated_sprite_2d.scale.x = 1
+	elif target_grid_pos.x < unit.grid_pos.x:
+		unit.animated_sprite_2d.scale.x = -1
+	var sword: Sword = scene_sword.instantiate()
+	unit.slot_weapon.position = (target_grid_pos - unit.grid_pos) * ManagerGrid.tile_size * unit.animated_sprite_2d.scale.x
+	unit.slot_weapon.add_child(sword)
+	sword.setup(finish, unit, target_grid_pos)
 	return
 
 

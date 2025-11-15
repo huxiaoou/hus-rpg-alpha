@@ -2,6 +2,9 @@ extends Node
 
 var layer_nav: LayerNav
 var layer_vis: LayerVis
+var tile_size: Vector2i:
+	get:
+		return layer_nav.tile_set.tile_size
 
 
 func get_grid_pos(world_pos: Vector2) -> Vector2i:

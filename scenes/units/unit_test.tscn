@@ -16,10 +16,11 @@ script = ExtResource("1_ip78a")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("2_basw2")
-animation = &"attack"
+animation = &"idle"
 autoplay = "idle"
-frame = 11
-frame_progress = 1.0
+frame_progress = 0.602331
+
+[node name="SlotWeapon" type="Node2D" parent="AnimatedSprite2D"]
 
 [node name="DirectorAbilities" parent="." instance=ExtResource("3_lara0")]
 
