@@ -5,6 +5,7 @@ class_name Projectile
 @export var damage: int = 4
 @export var speed: int = 700
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
+@export var scene_effect_impact: PackedScene
 
 var finish_ability: Callable
 var unit: UnitTest
@@ -31,6 +32,10 @@ func deal_damage() -> void:
 func _process(delta: float) -> void:
 	global_position = global_position.move_toward(target_world_pos, speed * delta)
 	if global_position == target_world_pos:
+		if scene_effect_impact:
+			var effect_impact: EffectImpact = scene_effect_impact.instantiate()
+			get_tree().current_scene.add_child(effect_impact)
+			effect_impact.global_position = global_position
 		audio_stream_player_2d.play()
 		visible = false
 		set_process(false)

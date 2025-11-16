@@ -2,9 +2,20 @@ extends AbilityBase
 
 class_name AbilityFireball
 
-func start(targe_grid_pos: Vector2i, _on_ablility_finished: Callable) -> void:
-	super.start(targe_grid_pos, _on_ablility_finished)
-	finish()
+@export var scene_fireball: PackedScene
+
+
+func start(target_grid_pos: Vector2i, _on_ablility_finished: Callable) -> void:
+	super.start(target_grid_pos, _on_ablility_finished)
+	if target_grid_pos.x > unit.grid_pos.x:
+		unit.animated_sprite_2d.scale = Vector2(1, 1)
+	elif target_grid_pos.x < unit.grid_pos.x:
+		unit.animated_sprite_2d.scale = Vector2(-1, 1)
+
+	var fireball: Fireball = scene_fireball.instantiate()
+	get_tree().current_scene.add_child(fireball)
+	fireball.global_position = unit.global_position
+	fireball.setup(finish, unit, target_grid_pos)
 	return
 
 

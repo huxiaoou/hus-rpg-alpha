@@ -1,12 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://dqcrr0rs48fxi"]
+[gd_scene load_steps=6 format=3 uid="uid://dqcrr0rs48fxi"]
 
 [ext_resource type="Script" uid="uid://ch0rhxl86lq50" path="res://scenes/abilities/ability_fireball.gd" id="1_tbcqm"]
 [ext_resource type="Texture2D" uid="uid://d4m1grwu02b4i" path="res://assets/ui/ability_fireball_normal.png" id="2_4wrbd"]
+[ext_resource type="PackedScene" uid="uid://pv7magwn8noc" path="res://scenes/weapons/fireball.tscn" id="2_t6xwv"]
 [ext_resource type="Texture2D" uid="uid://d3qnqqlkoa2b4" path="res://assets/ui/ability_fireball_hover.png" id="3_t6xwv"]
 [ext_resource type="Texture2D" uid="uid://bvfuriu735dly" path="res://assets/ui/ability_fireball_press.png" id="4_4bkdm"]
 
 [node name="AbilityFireball" type="Node"]
 script = ExtResource("1_tbcqm")
+scene_fireball = ExtResource("2_t6xwv")
 ability_id = "ability_fireball"
 ability_name = "Fireball"
 ability_description = "AOE attack for mages."
