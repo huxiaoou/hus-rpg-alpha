@@ -1,6 +1,6 @@
 extends Projectile
 
-class_name Fireball
+class_name ProjectileFireball
 
 var damage_radius: int = 1
 

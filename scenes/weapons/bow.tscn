@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bi7r3dtli1elq" path="res://scenes/weapons/bow.gd" id="1_pevdf"]
 [ext_resource type="Texture2D" uid="uid://cvss2mmd6465x" path="res://assets/weapons/bow.png" id="1_xdfa1"]
-[ext_resource type="PackedScene" uid="uid://bv3ftagddudie" path="res://scenes/weapons/arrow.tscn" id="2_wr7d4"]
+[ext_resource type="PackedScene" uid="uid://3x6nw51w3nn4" path="res://scenes/weapons/projectile_arrow.tscn" id="2_rs3f0"]
 [ext_resource type="AudioStream" uid="uid://limbawmupbg7" path="res://assets/audios/arrow-fire.mp3" id="4_rs3f0"]
 
 [sub_resource type="Animation" id="Animation_pevdf"]
@@ -76,7 +76,7 @@ _data = {
 
 [node name="Bow" type="Node2D"]
 script = ExtResource("1_pevdf")
-scene_arrow = ExtResource("2_wr7d4")
+scene_arrow = ExtResource("2_rs3f0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.3, 0.3)

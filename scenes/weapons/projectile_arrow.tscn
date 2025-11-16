@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://3x6nw51w3nn4"]
+
+[ext_resource type="PackedScene" uid="uid://dptcyad0ufw6r" path="res://scenes/weapons/projectile.tscn" id="1_plowb"]
+[ext_resource type="AudioStream" uid="uid://2skotc4aac6e" path="res://assets/audios/arrow-swish_03-306040.mp3" id="2_mmdrf"]
+[ext_resource type="PackedScene" uid="uid://baed82pjh5dr8" path="res://scenes/effects/effect_impact_arrow.tscn" id="3_k4xbu"]
+
+[node name="ProjectileArrow" instance=ExtResource("1_plowb")]
+scale = Vector2(0.3, 0.3)
+anim_name = "arrow"
+fire_audio = ExtResource("2_mmdrf")
+scene_effect_impact = ExtResource("3_k4xbu")

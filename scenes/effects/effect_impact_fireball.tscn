@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://veyq2ett5ixh"]
+
+[ext_resource type="PackedScene" uid="uid://dquwjcqgcia3u" path="res://scenes/effects/effect_impact.tscn" id="1_bao1r"]
+[ext_resource type="AudioStream" uid="uid://b6tplhehonwwx" path="res://assets/audios/fireball-impact-351961.mp3" id="2_yptwb"]
+
+[node name="EffectImpactFireball" instance=ExtResource("1_bao1r")]
+effect_name = "fireball"
+effect_audio = ExtResource("2_yptwb")

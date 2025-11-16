@@ -1,61 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://dquwjcqgcia3u"]
+[gd_scene load_steps=3 format=3 uid="uid://dquwjcqgcia3u"]
 
-[ext_resource type="Texture2D" uid="uid://b1oi08kkj1loj" path="res://assets/weapons/fireball.png" id="1_f31fc"]
+[ext_resource type="SpriteFrames" uid="uid://dan0xcdpxorhu" path="res://resources/sprite_frames/sprite_frames_effect_impact.tres" id="2_018sy"]
 [ext_resource type="Script" uid="uid://bd8jn0shvlil8" path="res://scenes/effects/effect_impact.gd" id="2_x3ugh"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_x3ugh"]
-atlas = ExtResource("1_f31fc")
-region = Rect2(248, 0, 248, 248)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_018sy"]
-atlas = ExtResource("1_f31fc")
-region = Rect2(496, 0, 248, 248)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3j4h6"]
-atlas = ExtResource("1_f31fc")
-region = Rect2(744, 0, 248, 248)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_p77ex"]
-atlas = ExtResource("1_f31fc")
-region = Rect2(992, 0, 248, 248)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7ch52"]
-atlas = ExtResource("1_f31fc")
-region = Rect2(1240, 0, 248, 248)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_plomj"]
-atlas = ExtResource("1_f31fc")
-region = Rect2(1488, 0, 248, 248)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_shuxe"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_x3ugh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_018sy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3j4h6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_p77ex")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7ch52")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_plomj")
-}],
-"loop": false,
-"name": &"default",
-"speed": 12.0
-}]
-
-[node name="EffectImpact" type="AnimatedSprite2D"]
-sprite_frames = SubResource("SpriteFrames_shuxe")
-autoplay = "default"
-frame = 5
-frame_progress = 1.0
+[node name="EffectImpact" type="Node2D"]
 script = ExtResource("2_x3ugh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_018sy")
+autoplay = "default"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+autoplay = true

@@ -1,0 +1,50 @@
+[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://cd2pwx4trwrn4"]
+
+[ext_resource type="Texture2D" uid="uid://c6tyuadqgmv6t" path="res://assets/weapons/Arrow.png" id="1_j1vrd"]
+[ext_resource type="Texture2D" uid="uid://b1oi08kkj1loj" path="res://assets/weapons/fireball.png" id="1_otd41"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_epm5e"]
+atlas = ExtResource("1_j1vrd")
+region = Rect2(0, 0, 320, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_esrpj"]
+atlas = ExtResource("1_otd41")
+region = Rect2(248, 0, 248, 248)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j6fpk"]
+atlas = ExtResource("1_otd41")
+region = Rect2(496, 0, 248, 248)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_knu62"]
+atlas = ExtResource("1_otd41")
+region = Rect2(744, 0, 248, 248)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_epm5e")
+}],
+"loop": true,
+"name": &"arrow",
+"speed": 18.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 18.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_esrpj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j6fpk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_knu62")
+}],
+"loop": true,
+"name": &"fireball",
+"speed": 18.0
+}]
