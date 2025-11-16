@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://baed82pjh5dr8"]
+
+[ext_resource type="PackedScene" uid="uid://dquwjcqgcia3u" path="res://scenes/effects/effect_impact.tscn" id="1_e1172"]
+[ext_resource type="AudioStream" uid="uid://bk63ps6qci1ti" path="res://assets/audios/arrow-body-impact.mp3" id="2_8xtvr"]
+
+[node name="EffectImpactArrow" instance=ExtResource("1_e1172")]
+effect_name = "arrow"
+effect_audio = ExtResource("2_8xtvr")

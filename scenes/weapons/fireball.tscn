@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b1oi08kkj1loj" path="res://assets/weapons/fireball.png" id="1_bxiq0"]
 [ext_resource type="Script" uid="uid://dimtd1q8vunqt" path="res://scenes/weapons/fireball.gd" id="1_uu6q0"]
-[ext_resource type="PackedScene" uid="uid://dquwjcqgcia3u" path="res://scenes/effects/effect_impact.tscn" id="2_5y0vp"]
+[ext_resource type="PackedScene" uid="uid://veyq2ett5ixh" path="res://scenes/effects/effect_impact_fireball.tscn" id="2_5y0vp"]
 [ext_resource type="AudioStream" uid="uid://b6tplhehonwwx" path="res://assets/audios/fireball-impact-351961.mp3" id="3_jve0i"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5y0vp"]
@@ -37,7 +37,7 @@ animations = [{
 [node name="Fireball" type="Node2D"]
 script = ExtResource("1_uu6q0")
 damage = 2
-speed = 500
+speed = 800
 scene_effect_impact = ExtResource("2_5y0vp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
