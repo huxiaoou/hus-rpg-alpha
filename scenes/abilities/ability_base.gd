@@ -8,6 +8,7 @@ class_name AbilityBase
 @export var texture_normal: Texture2D
 @export var texture_hover: Texture2D
 @export var texture_press: Texture2D
+@export var stamina_cost: int = 80
 
 var unit: UnitTest
 var is_active: bool = false
@@ -22,6 +23,7 @@ func _ready() -> void:
 func start(_targe_grid_pos: Vector2i, _on_ablility_finished: Callable) -> void:
 	is_active = true
 	on_ability_finished = _on_ablility_finished
+	unit.cur_stamina -= stamina_cost
 	print("Begin to cast ablility %s" % ability_name)
 	return
 

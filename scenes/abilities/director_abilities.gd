@@ -53,6 +53,16 @@ func try_performing_selected_ability() -> void:
 		return
 	if ManagerGame.selected_unit != ability_selected.unit:
 		return
+	if ability_selected.unit.cur_stamina < ability_selected.stamina_cost:
+		print_rich(
+			"Current stamina is [color=green]%d[/color], ability stamina cost is [color=yellow]%d[/color], Not enough stamina for ability [b]%s[/b]." % [
+				ability_selected.unit.cur_stamina,
+				ability_selected.stamina_cost,
+				ability_selected.ability_name,
+			],
+		)
+		return
+
 	var target_grid_pos: Vector2i = ManagerGrid.get_mouse_grid_pos()
 	if target_grid_pos not in ability_selected.get_ability_grids():
 		print("Target grid %s is out of range for %s" % [str(target_grid_pos), ability_selected.ability_name])

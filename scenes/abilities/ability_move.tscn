@@ -13,4 +13,5 @@ ability_description = "Make unit move in the map."
 texture_normal = ExtResource("2_6u8dh")
 texture_hover = ExtResource("3_5rrik")
 texture_press = ExtResource("4_2dyxb")
+stamina_cost = 20
 metadata/_custom_type_script = "uid://dl7biw0en2qpx"

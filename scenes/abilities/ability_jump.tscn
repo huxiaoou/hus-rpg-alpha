@@ -13,4 +13,5 @@ ability_description = "Jump to a target position"
 texture_normal = ExtResource("2_ntds7")
 texture_hover = ExtResource("3_18su1")
 texture_press = ExtResource("4_kj63q")
+stamina_cost = 20
 metadata/_custom_type_script = "uid://dl7biw0en2qpx"
