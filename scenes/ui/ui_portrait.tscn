@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7lnny7d7se0q"]
+
+[ext_resource type="Theme" uid="uid://cmc345t3y1agn" path="res://resources/themes/theme_ui.tres" id="1_73rxu"]
+[ext_resource type="PackedScene" uid="uid://cgnga05lsvvok" path="res://scenes/ui/bar_status.tscn" id="3_fu12v"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_73rxu"]
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[node name="UIPortrait" type="HBoxContainer"]
+offset_right = 292.0
+offset_bottom = 128.0
+size_flags_horizontal = 0
+theme = ExtResource("1_73rxu")
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(96, 128)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.78
+theme_override_styles/panel = SubResource("StyleBoxFlat_73rxu")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_top = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 6
+
+[node name="BarHealth" parent="MarginContainer/VBoxContainer" instance=ExtResource("3_fu12v")]
+layout_mode = 2
+color = Color(0.545098, 0, 0, 1)
+
+[node name="BarMagicka" parent="MarginContainer/VBoxContainer" instance=ExtResource("3_fu12v")]
+layout_mode = 2
+color = Color(0, 0.386992, 0.908205, 1)
+
+[node name="BarStamina" parent="MarginContainer/VBoxContainer" instance=ExtResource("3_fu12v")]
+layout_mode = 2
+color = Color(0.133333, 0.545098, 0.133333, 1)
+
+[node name="BarResolve" parent="MarginContainer/VBoxContainer" instance=ExtResource("3_fu12v")]
+layout_mode = 2
+color = Color(0.880495, 0.4806, 1.54018e-06, 1)

@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://ba8x35xwcb1qm"]
+[gd_scene load_steps=6 format=3 uid="uid://ba8x35xwcb1qm"]
 
+[ext_resource type="PackedScene" uid="uid://c7lnny7d7se0q" path="res://scenes/ui/ui_portrait.tscn" id="1_0dwhk"]
 [ext_resource type="Theme" uid="uid://cmc345t3y1agn" path="res://resources/themes/theme_ui.tres" id="1_aac20"]
 [ext_resource type="PackedScene" uid="uid://byc024y0vofmp" path="res://scenes/ui/ui_unit_abilities.tscn" id="1_u7n8c"]
 [ext_resource type="PackedScene" uid="uid://cmvmuakbaow42" path="res://scenes/ui/button_ability.tscn" id="2_f5cxw"]
@@ -7,44 +8,68 @@
 
 [node name="UI" type="CanvasLayer"]
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-anchors_preset = 12
-anchor_top = 1.0
+[node name="Control" type="VBoxContainer" parent="."]
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
 
-[node name="PanelContainerAbility" type="PanelContainer" parent="HBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Control/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 8
+
+[node name="UIPortrait1" parent="Control/MarginContainer/VBoxContainer2" instance=ExtResource("1_0dwhk")]
+layout_mode = 2
+
+[node name="UIPortrait2" parent="Control/MarginContainer/VBoxContainer2" instance=ExtResource("1_0dwhk")]
+layout_mode = 2
+
+[node name="UIPortrait3" parent="Control/MarginContainer/VBoxContainer2" instance=ExtResource("1_0dwhk")]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+layout_mode = 2
+size_flags_vertical = 10
+
+[node name="PanelContainerAbility" type="PanelContainer" parent="Control/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 8.0
 theme = ExtResource("1_aac20")
 
-[node name="UIUnitAbilities" parent="HBoxContainer/PanelContainerAbility" instance=ExtResource("1_u7n8c")]
+[node name="UIUnitAbilities" parent="Control/HBoxContainer/PanelContainerAbility" instance=ExtResource("1_u7n8c")]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
 ui_button_ability_scene = ExtResource("2_f5cxw")
 
-[node name="PanelContainerTurn" type="PanelContainer" parent="HBoxContainer"]
+[node name="PanelContainerTurn" type="PanelContainer" parent="Control/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("1_aac20")
 
-[node name="UITurn" type="VBoxContainer" parent="HBoxContainer/PanelContainerTurn"]
+[node name="UITurn" type="VBoxContainer" parent="Control/HBoxContainer/PanelContainerTurn"]
 layout_mode = 2
 theme_override_constants/separation = 4
 script = ExtResource("4_g5kmx")
 
-[node name="LabelTurn" type="Label" parent="HBoxContainer/PanelContainerTurn/UITurn"]
+[node name="LabelTurn" type="Label" parent="Control/HBoxContainer/PanelContainerTurn/UITurn"]
 layout_mode = 2
 text = "Player's Turn"
 horizontal_alignment = 1
 vertical_alignment = 3
 
-[node name="ButtonEndTurn" type="Button" parent="HBoxContainer/PanelContainerTurn/UITurn"]
+[node name="ButtonEndTurn" type="Button" parent="Control/HBoxContainer/PanelContainerTurn/UITurn"]
 layout_mode = 2
 theme = ExtResource("1_aac20")
 text = "End Turn"

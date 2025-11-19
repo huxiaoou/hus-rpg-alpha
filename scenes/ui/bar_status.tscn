@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://cgnga05lsvvok"]
+
+[ext_resource type="Theme" uid="uid://cmc345t3y1agn" path="res://resources/themes/theme_ui.tres" id="1_dj4xe"]
+[ext_resource type="Script" uid="uid://dxl455v0d3avd" path="res://scenes/ui/bar_status.gd" id="2_32owa"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_73rxu"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="BarStatus" type="ProgressBar"]
+custom_minimum_size = Vector2(192, 16)
+offset_right = 240.0
+offset_bottom = 16.0
+theme = ExtResource("1_dj4xe")
+value = 80.0
+show_percentage = false
+script = ExtResource("2_32owa")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_73rxu")
+text = "80/100"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
