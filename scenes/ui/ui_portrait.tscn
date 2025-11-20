@@ -1,31 +1,45 @@
-[gd_scene load_steps=4 format=3 uid="uid://c7lnny7d7se0q"]
+[gd_scene load_steps=5 format=3 uid="uid://c7lnny7d7se0q"]
 
 [ext_resource type="Theme" uid="uid://cmc345t3y1agn" path="res://resources/themes/theme_ui.tres" id="1_73rxu"]
+[ext_resource type="Script" uid="uid://7d1jkrb5ns1e" path="res://scenes/ui/ui_portrait.gd" id="2_fu12v"]
 [ext_resource type="PackedScene" uid="uid://cgnga05lsvvok" path="res://scenes/ui/bar_status.tscn" id="3_fu12v"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_73rxu"]
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
+bg_color = Color(0.109804, 0.109804, 0.109804, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
 border_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
 
 [node name="UIPortrait" type="HBoxContainer"]
 offset_right = 292.0
 offset_bottom = 128.0
 size_flags_horizontal = 0
 theme = ExtResource("1_73rxu")
+script = ExtResource("2_fu12v")
 
 [node name="Panel" type="Panel" parent="."]
 custom_minimum_size = Vector2(96, 128)
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 0.78
 theme_override_styles/panel = SubResource("StyleBoxFlat_73rxu")
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.05
+anchor_right = 0.95
+anchor_bottom = 0.95
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2

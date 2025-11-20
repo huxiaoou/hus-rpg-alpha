@@ -14,3 +14,8 @@ func _ready() -> void:
 	sb.border_width_bottom = 2
 	sb.border_width_left = 2
 	sb.border_color = Color("cccccc")
+
+
+func update(new_value: float) -> void:
+	value = new_value
+	label.text = "%d/%d" % [value, max_value]

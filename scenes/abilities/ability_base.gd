@@ -24,6 +24,7 @@ func start(_targe_grid_pos: Vector2i, _on_ablility_finished: Callable) -> void:
 	is_active = true
 	on_ability_finished = _on_ablility_finished
 	unit.cur_stamina -= stamina_cost
+	unit.stamina_changed.emit(unit.cur_stamina)
 	print("Begin to cast ablility %s" % ability_name)
 	return
 

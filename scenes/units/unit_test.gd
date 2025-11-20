@@ -4,10 +4,11 @@ class_name UnitTest
 
 @export var start_grid: Vector2i
 @export var is_enemy: bool = false
+@export var potrait: Texture
 
 @export var max_health: int = 100
 @export var max_stamina: int = 100
-@export var max_magica: int = 100
+@export var max_magicka: int = 100
 @export var max_resolve: int = 100
 
 @onready var director_abilities: DirectorAbilities = $DirectorAbilities
@@ -17,11 +18,15 @@ class_name UnitTest
 
 var cur_health: int
 var cur_stamina: int
-var cur_magica: int
+var cur_magicka: int
 var cur_resolve: int
 
 signal unit_double_clicked(unit: UnitTest)
 signal unit_selected(unit: UnitTest)
+signal health_changed(new_health: float)
+signal magicka_changed(new_health: float)
+signal stamina_changed(new_health: float)
+signal resolve_changed(new_health: float)
 
 var grid_pos: Vector2i:
 	get:
@@ -40,7 +45,7 @@ func _ready() -> void:
 
 	cur_health = max_health
 	cur_stamina = max_stamina
-	cur_magica = max_magica
+	cur_magicka = max_magicka
 	cur_resolve = max_resolve
 
 
@@ -70,3 +75,5 @@ func on_unit_selected(unit: UnitTest) -> void:
 
 func take_damage(damage: int) -> void:
 	print("%s take %d damage" % [name, damage])
+	cur_health -= damage
+	health_changed.emit(cur_health)

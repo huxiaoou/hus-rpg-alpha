@@ -2,6 +2,7 @@ extends Node
 
 @onready var camera_control: CameraControl = $CameraControl
 @onready var state_machine: StateMachine = $StateMachine
+@onready var ui: UI = $UI
 
 
 func _ready() -> void:
@@ -9,6 +10,7 @@ func _ready() -> void:
 		unit.unit_double_clicked.connect(camera_control.on_unit_double_clicked)
 		ManagerGrid.set_grid_walkablity(unit.grid_pos, false)
 		ManagerGrid.set_grid_occupant(unit.grid_pos, unit)
+		ui.portraits_container.register(unit)
 
 	for unit: UnitTest in ManagerGame.units_enemy:
 		unit.unit_double_clicked.connect(camera_control.on_unit_double_clicked)

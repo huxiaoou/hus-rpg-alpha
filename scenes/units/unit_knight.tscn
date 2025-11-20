@@ -1,13 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://dx3uvyo14wwms"]
+[gd_scene load_steps=5 format=3 uid="uid://dx3uvyo14wwms"]
 
 [ext_resource type="PackedScene" uid="uid://bqwob2kmuchxg" path="res://scenes/units/unit_test.tscn" id="1_vbc8a"]
 [ext_resource type="PackedScene" uid="uid://cknsx21bcgolb" path="res://scenes/abilities/ability_sword.tscn" id="2_2iwql"]
+[ext_resource type="Texture2D" uid="uid://dey1ejax4b8kj" path="res://assets/characters/fox_idle.png" id="2_k01nj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vr0mp"]
+atlas = ExtResource("2_k01nj")
+region = Rect2(105, 0, 66, 88)
 
 [node name="UnitKnight" instance=ExtResource("1_vbc8a")]
+potrait = SubResource("AtlasTexture_vr0mp")
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 animation = &"walk"
-frame = 0
 frame_progress = 0.0
 
 [node name="AbilitySword" parent="DirectorAbilities" index="2" instance=ExtResource("2_2iwql")]

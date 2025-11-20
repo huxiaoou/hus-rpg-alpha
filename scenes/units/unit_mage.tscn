@@ -1,14 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://w03eqo3mfmsm"]
+[gd_scene load_steps=6 format=3 uid="uid://w03eqo3mfmsm"]
 
 [ext_resource type="PackedScene" uid="uid://bqwob2kmuchxg" path="res://scenes/units/unit_test.tscn" id="1_7wqv3"]
 [ext_resource type="PackedScene" uid="uid://dqcrr0rs48fxi" path="res://scenes/abilities/ability_fireball.tscn" id="2_eb5ca"]
 [ext_resource type="SpriteFrames" uid="uid://bd0uqw2wem585" path="res://resources/sprite_frames/sprite_frames_mage.tres" id="2_fjxkf"]
+[ext_resource type="Texture2D" uid="uid://b22wp75erjvvp" path="res://assets/characters/monkey_idle.png" id="2_ia0sc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1y04x"]
+atlas = ExtResource("2_ia0sc")
+region = Rect2(39, 0, 72, 96)
 
 [node name="UnitMage" instance=ExtResource("1_7wqv3")]
+potrait = SubResource("AtlasTexture_1y04x")
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 sprite_frames = ExtResource("2_fjxkf")
-frame = 0
 frame_progress = 0.0
 
 [node name="AbilityFireball" parent="DirectorAbilities" index="2" instance=ExtResource("2_eb5ca")]
