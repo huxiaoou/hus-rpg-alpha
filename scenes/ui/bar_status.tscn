@@ -1,7 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://cgnga05lsvvok"]
+[gd_scene load_steps=6 format=3 uid="uid://cgnga05lsvvok"]
 
 [ext_resource type="Theme" uid="uid://cmc345t3y1agn" path="res://resources/themes/theme_ui.tres" id="1_dj4xe"]
 [ext_resource type="Script" uid="uid://dxl455v0d3avd" path="res://scenes/ui/bar_status.gd" id="2_32owa"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_32owa"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+expand_margin_right = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e1bpo"]
+border_width_left = 2
+border_width_top = 2
+border_width_bottom = 2
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_73rxu"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -14,6 +27,19 @@ theme = ExtResource("1_dj4xe")
 value = 100.0
 show_percentage = false
 script = ExtResource("2_32owa")
+
+[node name="ProgressBarFront" type="ProgressBar" parent="."]
+custom_minimum_size = Vector2(192, 18)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_32owa")
+theme_override_styles/fill = SubResource("StyleBoxFlat_e1bpo")
+value = 50.0
+show_percentage = false
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
