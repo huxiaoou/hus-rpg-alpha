@@ -27,14 +27,24 @@ func update_max_val(new_max_value: float) -> void:
 
 
 func update_val(new_value: float) -> void:
-	progress_bar_front.value = new_value
-	await get_tree().create_timer(0.5).timeout
-	var tween: Tween = get_tree().create_tween()
-	for __ in range(3):
-		tween.tween_property(styleboxflat_back, "bg_color", Color(1, 1, 1, 0), 0.1)
-		tween.tween_property(styleboxflat_back, "bg_color", Color(1, 1, 1, 1), 0.1)
-	tween.tween_property(self, "value", new_value, 0.5)
-	tween.tween_callback(update_label)
+	if new_value < progress_bar_front.value:
+		progress_bar_front.value = new_value
+		await get_tree().create_timer(0.5).timeout
+		var tween: Tween = get_tree().create_tween()
+		for __ in range(3):
+			tween.tween_property(styleboxflat_back, "bg_color", Color(1, 1, 1, 0), 0.1)
+			tween.tween_property(styleboxflat_back, "bg_color", Color(1, 1, 1, 1), 0.1)
+		tween.tween_property(self, "value", new_value, 0.3)
+		tween.tween_callback(update_label)
+	elif new_value > progress_bar_front.value:
+		value = new_value
+		await get_tree().create_timer(0.5).timeout
+		var tween: Tween = get_tree().create_tween()
+		for __ in range(3):
+			tween.tween_property(styleboxflat_back, "bg_color", Color(1, 1, 1, 0), 0.1)
+			tween.tween_property(styleboxflat_back, "bg_color", Color(1, 1, 1, 1), 0.1)
+		tween.tween_property(progress_bar_front, "value", new_value, 0.3)
+		tween.tween_callback(update_label)
 
 
 func update_label() -> void:

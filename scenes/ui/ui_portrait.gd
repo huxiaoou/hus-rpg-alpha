@@ -13,7 +13,7 @@ var player: UnitTest = null:
 		player = new_player
 		player.health_changed.connect(on_health_changed)
 		player.magicka_changed.connect(on_magicka_changed)
-		player.stamina_changed.connect(on_staminc_changed)
+		player.stamina_changed.connect(on_stamina_changed)
 		player.resolve_changed.connect(on_resolve_changed)
 
 		bar_health.update_max_val(player.max_health)
@@ -36,7 +36,7 @@ func on_magicka_changed(new_magicka: float) -> void:
 	bar_magicka.update_val(new_magicka)
 
 
-func on_staminc_changed(new_stamina: float) -> void:
+func on_stamina_changed(new_stamina: float) -> void:
 	bar_stamina.update_val(new_stamina)
 
 

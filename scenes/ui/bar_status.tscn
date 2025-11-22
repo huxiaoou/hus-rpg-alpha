@@ -38,7 +38,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_32owa")
 theme_override_styles/fill = SubResource("StyleBoxFlat_e1bpo")
-value = 50.0
+value = 100.0
 show_percentage = false
 
 [node name="Label" type="Label" parent="."]

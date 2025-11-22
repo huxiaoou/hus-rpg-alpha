@@ -18,12 +18,6 @@ func exit() -> void:
 	ManagerTurn.turn_enemy_started.disconnect(on_turn_enemy_started)
 	return
 
-#func process(_delta: float) -> void:
-#if go_to_turn_enemy:
-#state_changed.emit("StateTurnEnemy")
-#return
-#
-
 
 func on_turn_enemy_started() -> void:
 	if ManagerGame.selected_unit.director_abilities.is_performing:
@@ -39,4 +33,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		ManagerGame.selected_unit.director_abilities.try_performing_selected_ability()
 	elif event.is_action_pressed("right_mouse_click"):
 		ManagerGame.selected_unit.director_abilities.unselect_ability()
+	elif event.is_action_pressed("TestKey"):
+		ManagerGame.selected_unit.cur_stamina += 20
+		ManagerGame.selected_unit.stamina_changed.emit(ManagerGame.selected_unit.cur_stamina)
 	return
