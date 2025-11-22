@@ -5,9 +5,11 @@ class_name DirectorAbilities
 var is_performing: bool = false
 var ability_selected: AbilityBase = null
 var abilities: Dictionary[String, AbilityBase] = { }
+var enemy: UnitTest = null
 
 
 func _ready() -> void:
+	enemy = get_parent()
 	for ablility: AbilityBase in get_children():
 		if ablility is AbilityBase:
 			abilities[ablility.ability_id] = ablility
@@ -69,3 +71,20 @@ func try_performing_selected_ability() -> void:
 		return
 	is_performing = true
 	ability_selected.start(target_grid_pos, on_ability_finished)
+
+
+func try_perform_ai_ability() -> bool:
+	if is_performing:
+		return true
+
+	var enemy_ai: EnemyAI = enemy.get_node_or_null("EnemyAI")
+	if enemy_ai == null:
+		return false
+
+	var ai_ability_data: AIAbilityData = enemy_ai.think()
+	if ai_ability_data == null:
+		return false
+
+	is_performing = true
+	ai_ability_data.ability.start(ai_ability_data.grid, on_ability_finished)
+	return true
