@@ -21,6 +21,7 @@ func _ready() -> void:
 
 
 func start(_targe_grid_pos: Vector2i, _on_ablility_finished: Callable) -> void:
+	unit.z_index = 1
 	is_active = true
 	on_ability_finished = _on_ablility_finished
 	unit.cur_stamina -= stamina_cost
@@ -32,6 +33,7 @@ func start(_targe_grid_pos: Vector2i, _on_ablility_finished: Callable) -> void:
 func finish() -> void:
 	is_active = false
 	on_ability_finished.call()
+	unit.z_index = 0
 	print("Finish ablility %s" % ability_name)
 	return
 
