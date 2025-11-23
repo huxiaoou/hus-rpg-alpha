@@ -12,4 +12,4 @@ func deal_damage() -> void:
 			var occupiant: UnitTest = ManagerGrid.get_grid_occupant(potential_grid)
 			if occupiant and occupiant.is_enemy != unit.is_enemy:
 				occupiant.take_damage(damage)
-		return
+	return
