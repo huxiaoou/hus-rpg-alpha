@@ -15,6 +15,7 @@ class_name UnitTest
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var collision_shape_unit: CollisionShapeUnit = $CollisionShapeUnit
 @onready var slot_weapon: Node2D = $AnimatedSprite2D/SlotWeapon
+@onready var bar_health: BarStatus = $AnimatedSprite2D/BarHealth
 
 var cur_health: int
 var cur_stamina: int
@@ -47,6 +48,8 @@ func _ready() -> void:
 	cur_stamina = max_stamina
 	cur_magicka = max_magicka
 	cur_resolve = max_resolve
+	bar_health.update_max_val(max_health)
+	bar_health.update_val(cur_health)
 
 
 func on_turn_player_entered() -> void:
@@ -77,3 +80,4 @@ func take_damage(damage: int) -> void:
 	print("%s take %d damage" % [name, damage])
 	cur_health -= damage
 	health_changed.emit(cur_health)
+	bar_health.update_val(cur_health)

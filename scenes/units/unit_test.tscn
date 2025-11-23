@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bqwob2kmuchxg"]
+[gd_scene load_steps=9 format=3 uid="uid://bqwob2kmuchxg"]
 
 [ext_resource type="Script" uid="uid://epmx03egse45" path="res://scenes/units/unit_test.gd" id="1_ip78a"]
 [ext_resource type="SpriteFrames" uid="uid://emckyudplu5x" path="res://resources/sprite_frames/sprite_frames_knight.tres" id="2_basw2"]
+[ext_resource type="PackedScene" uid="uid://cgnga05lsvvok" path="res://scenes/ui/bar_status.tscn" id="3_gtr1m"]
 [ext_resource type="PackedScene" uid="uid://dalshoc7gi076" path="res://scenes/abilities/director_abilities.tscn" id="3_lara0"]
 [ext_resource type="PackedScene" uid="uid://b3mfc486t6t6u" path="res://scenes/abilities/ability_move.tscn" id="4_basw2"]
 [ext_resource type="PackedScene" uid="uid://bwud22ity4meh" path="res://scenes/abilities/ability_jump.tscn" id="5_ublqq"]
@@ -21,6 +22,20 @@ autoplay = "idle"
 frame_progress = 0.602331
 
 [node name="SlotWeapon" type="Node2D" parent="AnimatedSprite2D"]
+
+[node name="BarHealth" parent="AnimatedSprite2D" instance=ExtResource("3_gtr1m")]
+custom_minimum_size = Vector2(128, 18)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -125.0
+offset_top = -71.5
+offset_right = -61.0
+offset_bottom = -53.5
+grow_horizontal = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.44
+color = Color(0.513618, 0.000566673, 0.000310636, 1)
 
 [node name="DirectorAbilities" parent="." instance=ExtResource("3_lara0")]
 

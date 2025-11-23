@@ -29,7 +29,6 @@ show_percentage = false
 script = ExtResource("2_32owa")
 
 [node name="ProgressBarFront" type="ProgressBar" parent="."]
-custom_minimum_size = Vector2(192, 18)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
