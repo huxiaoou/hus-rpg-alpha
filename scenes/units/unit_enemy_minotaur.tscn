@@ -1,15 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://b1k2voqj2mumk"]
+[gd_scene load_steps=5 format=3 uid="uid://b1k2voqj2mumk"]
 
 [ext_resource type="PackedScene" uid="uid://bqwob2kmuchxg" path="res://scenes/units/unit_test.tscn" id="1_cqgjw"]
 [ext_resource type="SpriteFrames" uid="uid://dh5mkp66laxh6" path="res://resources/sprite_frames/sprite_frames_minotaur.tres" id="2_007up"]
 [ext_resource type="PackedScene" uid="uid://cknsx21bcgolb" path="res://scenes/abilities/ability_sword.tscn" id="2_im5do"]
+[ext_resource type="Script" uid="uid://cdwqqdgu5r5cw" path="res://scenes/units/enemy_ai_minotaur.gd" id="4_d67m4"]
 
 [node name="UnitEnemyMinotaur" instance=ExtResource("1_cqgjw")]
 is_enemy = true
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 sprite_frames = ExtResource("2_007up")
-animation = &"idle"
 frame_progress = 0.396642
 
 [node name="AbilitySword" parent="DirectorAbilities" index="2" instance=ExtResource("2_im5do")]
+
+[node name="EnemyAI" type="Node" parent="." index="3"]
+script = ExtResource("4_d67m4")
+metadata/_custom_type_script = "uid://vkap5jlbes6w"

@@ -1,15 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://bkjfct3142yrt"]
+[gd_scene load_steps=5 format=3 uid="uid://bkjfct3142yrt"]
 
 [ext_resource type="PackedScene" uid="uid://bqwob2kmuchxg" path="res://scenes/units/unit_test.tscn" id="1_mu6og"]
 [ext_resource type="SpriteFrames" uid="uid://b205wvl68dy68" path="res://resources/sprite_frames/sprite_frames_valkyrie.tres" id="2_rpaxu"]
 [ext_resource type="PackedScene" uid="uid://d2dlwxlof6euy" path="res://scenes/abilities/ability_bow.tscn" id="3_s3n8b"]
+[ext_resource type="Script" uid="uid://e2273ai2y6sk" path="res://scenes/units/enemy_ai_valkyrie.gd" id="4_ypmw7"]
 
 [node name="UnitEnemyValkyrie" instance=ExtResource("1_mu6og")]
 is_enemy = true
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 sprite_frames = ExtResource("2_rpaxu")
-animation = &"idle"
 frame_progress = 0.448421
 
 [node name="AbilityBow" parent="DirectorAbilities" index="2" instance=ExtResource("3_s3n8b")]
+
+[node name="EnemyAI" type="Node" parent="." index="3"]
+script = ExtResource("4_ypmw7")
+metadata/_custom_type_script = "uid://vkap5jlbes6w"

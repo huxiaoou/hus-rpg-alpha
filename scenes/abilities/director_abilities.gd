@@ -79,6 +79,7 @@ func try_perform_ai_ability() -> bool:
 
 	var enemy_ai: EnemyAI = enemy.get_node_or_null("EnemyAI")
 	if enemy_ai == null:
+		print("%s ai is null" % enemy.name)
 		return false
 
 	var ai_ability_data: AIAbilityData = enemy_ai.think()
