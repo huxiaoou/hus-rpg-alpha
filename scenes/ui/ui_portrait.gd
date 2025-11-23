@@ -2,11 +2,14 @@ extends HBoxContainer
 
 class_name UIPortrait
 
+var double_click_threshold_milliseconds: int = 500
+var last_click_time: int = 0
+
 @onready var bar_health: BarStatus = $MarginContainer/VBoxContainer/BarHealth
 @onready var bar_magicka: BarStatus = $MarginContainer/VBoxContainer/BarMagicka
 @onready var bar_stamina: BarStatus = $MarginContainer/VBoxContainer/BarStamina
 @onready var bar_resolve: BarStatus = $MarginContainer/VBoxContainer/BarResolve
-@onready var texture_rect: TextureRect = $Panel/TextureRect
+@onready var texture_btn: TextureButton = $Panel/TextureBtn
 
 var player: UnitTest = null:
 	set(new_player):
@@ -25,7 +28,30 @@ var player: UnitTest = null:
 		bar_magicka.update_val(player.cur_magicka)
 		bar_stamina.update_val(player.cur_stamina)
 		bar_resolve.update_val(player.cur_resolve)
-		texture_rect.texture = player.potrait
+		texture_btn.texture_normal = player.potrait
+		texture_btn.pressed.connect(on_portrait_pressed)
+
+
+func on_portrait_pressed() -> void:
+	print("%s is selected" % player.name)
+	var this_click_time: int = Time.get_ticks_msec()
+	if this_click_time - last_click_time < double_click_threshold_milliseconds:
+		on_portrait_double_clicked()
+	else:
+		on_portrait_single_clicked()
+	last_click_time = this_click_time
+
+
+func on_portrait_single_clicked() -> void:
+	if not ManagerGame.ability_is_selected:
+		player.unit_selected.emit(player)
+	return
+
+
+func on_portrait_double_clicked() -> void:
+	print("double clicked")
+	player.unit_double_clicked.emit(player)
+	return
 
 
 func on_health_changed(new_health: float) -> void:
