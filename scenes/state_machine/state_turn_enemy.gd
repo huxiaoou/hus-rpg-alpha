@@ -5,6 +5,7 @@ var go_to_player_turn: bool = false
 
 func enter() -> void:
 	super.enter()
+	go_to_player_turn = false
 	ManagerTurn.turn_player_started.connect(on_turn_player_started)
 	return
 
