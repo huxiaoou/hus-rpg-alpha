@@ -24,6 +24,7 @@ var cur_resolve: int
 
 signal unit_double_clicked(unit: UnitTest)
 signal unit_selected(unit: UnitTest)
+signal unit_damaged(unit: UnitTest)
 signal health_changed(new_health: float)
 signal magicka_changed(new_health: float)
 signal stamina_changed(new_health: float)
@@ -79,5 +80,6 @@ func on_unit_selected(unit: UnitTest) -> void:
 func take_damage(damage: int) -> void:
 	print("%s take %d damage" % [name, damage])
 	cur_health -= damage
+	unit_damaged.emit(damage)
 	health_changed.emit(cur_health)
 	bar_health.update_val(cur_health)

@@ -34,6 +34,6 @@ func _unhandled_input(event: InputEvent) -> void:
 	elif event.is_action_pressed("right_mouse_click"):
 		ManagerGame.selected_unit.director_abilities.unselect_ability()
 	elif event.is_action_pressed("TestKey"):
-		ManagerGame.selected_unit.cur_stamina += 20
+		ManagerGame.selected_unit.cur_stamina += 80
 		ManagerGame.selected_unit.stamina_changed.emit(ManagerGame.selected_unit.cur_stamina)
 	return

@@ -41,11 +41,13 @@ func deal_damage() -> void:
 func _process(delta: float) -> void:
 	global_position = global_position.move_toward(target_world_pos, speed * delta)
 	if global_position == target_world_pos:
+		deal_damage()
 		if scene_effect_impact:
 			var effect_impact: EffectImpact = scene_effect_impact.instantiate()
 			get_tree().current_scene.add_child(effect_impact)
 			effect_impact.global_position = global_position
 			effect_impact.effect_finished.connect(on_impact_effect_finished)
+
 		else:
 			on_impact_effect_finished()
 		visible = false
@@ -53,6 +55,5 @@ func _process(delta: float) -> void:
 
 
 func on_impact_effect_finished() -> void:
-	deal_damage()
 	finish_ability.call()
 	queue_free()
