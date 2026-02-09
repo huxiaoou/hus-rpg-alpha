@@ -1,0 +1,17 @@
+[gd_scene load_steps=6 format=3 uid="uid://cp8xm4vw2rtn5"]
+
+[ext_resource type="Script" uid="uid://cg3k8vn2qw7tp" path="res://scenes/abilities/ability_shoot.gd" id="1_shoot"]
+[ext_resource type="PackedScene" uid="uid://3x6nw51w3nn4" path="res://scenes/weapons/projectile_arrow.tscn" id="2_arrow"]
+[ext_resource type="Texture2D" uid="uid://dwmg6hgoha5d5" path="res://assets/ui/ability_bow_normal.png" id="3_normal"]
+[ext_resource type="Texture2D" uid="uid://b2pvsb5deuslm" path="res://assets/ui/ability_bow_hover.png" id="4_hover"]
+[ext_resource type="Texture2D" uid="uid://cdcw4d0dl33qy" path="res://assets/ui/ability_bow_press.png" id="5_press"]
+
+[node name="AbilityShoot" type="Node"]
+script = ExtResource("1_shoot")
+scene_arrow = ExtResource("2_arrow")
+ability_id = "ability_shoot"
+ability_name = "Shoot"
+ability_description = "Launch an arrow projectile at the target."
+texture_normal = ExtResource("3_normal")
+texture_hover = ExtResource("4_hover")
+texture_press = ExtResource("5_press")
