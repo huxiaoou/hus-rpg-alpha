@@ -16,7 +16,6 @@ func start(target_grid_pos: Vector2i, _on_ablility_finished: Callable) -> void:
 	get_tree().current_scene.add_child(arrow)
 	arrow.global_position = unit.global_position
 	arrow.setup(finish, unit, target_grid_pos)
-	return
 
 
 func get_ability_grids(unit_grid: Vector2i = unit.grid_pos) -> Array[Vector2i]:
